@@ -62,33 +62,30 @@ export default function ServicosPage() {
         ])}
       />
 
-      {/* Breadcrumb */}
-      <Container>
-        <nav aria-label="Breadcrumb" className="pt-6 pb-2 text-sm text-muted-foreground">
-          <ol className="flex flex-wrap items-center gap-1.5">
-            <li className="flex items-center gap-1.5">
-              <Link href="/" className="hover:text-foreground">
-                Início
-              </Link>
-              <ChevronRight className="size-3.5" aria-hidden="true" />
-            </li>
-            <li aria-current="page" className="font-medium text-foreground">
-              Serviços
-            </li>
-          </ol>
-        </nav>
-      </Container>
-
       {/* Hero */}
-      <section className="pt-6 pb-16 sm:pt-8 sm:pb-20">
+      <section className="bg-navy text-navy-foreground pt-6 pb-16 sm:pt-8 sm:pb-20">
         <Container>
-          <div className="max-w-3xl">
+          <nav aria-label="Breadcrumb" className="pt-6 pb-2 text-sm text-navy-muted">
+            <ol className="flex flex-wrap items-center gap-1.5">
+              <li className="flex items-center gap-1.5">
+                <Link href="/" className="hover:text-navy-foreground">
+                  Início
+                </Link>
+                <ChevronRight className="size-3.5" aria-hidden="true" />
+              </li>
+              <li aria-current="page" className="font-medium text-navy-foreground">
+                Serviços
+              </li>
+            </ol>
+          </nav>
+
+          <div className="mt-4 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="secondary" className="gap-1.5">
+              <Badge className="gap-1.5 border-white/15 bg-navy-card text-navy-muted">
                 <Sparkles className="size-3" aria-hidden="true" />
                 Atendimento a domicílio
               </Badge>
-              <Badge variant="outline" className="gap-1.5">
+              <Badge className="gap-1.5 border-white/15 bg-navy-card text-navy-muted">
                 <Star className="size-3 fill-primary text-primary" aria-hidden="true" />
                 {BUSINESS.rating.value.toFixed(1)} ({BUSINESS.rating.count} avaliações)
               </Badge>
@@ -96,7 +93,7 @@ export default function ServicosPage() {
             <h1 className="mt-4 text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
               Serviços de Higienização de Estofados
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground">
+            <p className="mt-5 text-lg text-navy-muted">
               A GS Vitaliza higieniza sofás, colchões, bancos automotivos, tapetes e carpetes, e
               também aplica impermeabilização de estofados. Todo o atendimento é feito a
               domicílio, em residências e empresas, com produtos profissionais que não danificam
@@ -104,7 +101,7 @@ export default function ServicosPage() {
             </p>
             <div className="mt-8">
               <Button
-                variant="cta"
+                variant="cta-white"
                 size="xl"
                 render={
                   <a

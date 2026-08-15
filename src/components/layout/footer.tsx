@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, Sparkles, Star } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import {
   AREAS_NAV,
@@ -14,11 +15,14 @@ export function Footer() {
     <footer className="bg-navy text-navy-foreground">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2 font-heading text-lg font-semibold">
-            <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow">
-              <Sparkles className="size-4.5" aria-hidden="true" />
-            </span>
-            {BUSINESS.displayName}
+          <Link href="/" className="inline-flex rounded-xl bg-white px-3 py-2" aria-label={BUSINESS.displayName}>
+            <Image
+              src="/images/logo-gs.png"
+              alt={BUSINESS.displayName}
+              width={806}
+              height={309}
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-sm text-sm text-navy-muted">
             Higienização profissional de sofás, colchões, bancos automotivos, tapetes e

@@ -1,8 +1,9 @@
-import { Building2, Droplets, Home, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { Building2, Droplets, Home, ShieldCheck, Sparkles, Star, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/motion/reveal";
 import { BUSINESS } from "@/lib/constants";
 
-const ITEMS = [
+const ITEMS: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Home,
     title: "Atendimento a domicílio",
@@ -42,24 +43,41 @@ const ITEMS = [
 
 export function Differentiators() {
   return (
-    <section className="bg-muted/40 py-16 sm:py-24">
+    <section className="bg-navy py-16 text-navy-foreground sm:py-24">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">Por que escolher a GS Vitaliza</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-base text-navy-muted sm:text-lg">
             Cuidado com o seu estofado do início ao fim, com foco em saúde e higiene.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ITEMS.map((item) => (
-            <div key={item.title} className="rounded-2xl bg-card p-6 ring-1 ring-border">
-              <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <item.icon className="size-5.5" aria-hidden="true" />
-              </span>
-              <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-            </div>
+        <div
+          className="diff-grid -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 lg:gap-5"
+        >
+          {ITEMS.map((item, index) => (
+            <Reveal
+              key={item.title}
+              delay={index * 80}
+              className="diff-card relative flex min-h-[300px] w-[82vw] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-2xl border border-white/10 p-7 sm:w-auto sm:min-h-[280px]"
+              style={{
+                background: "linear-gradient(160deg, var(--navy-surface) 0%, var(--navy) 75%)",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute top-8 left-1/2 size-40 -translate-x-1/2 rounded-full bg-primary/25 blur-3xl"
+              />
+              <item.icon
+                aria-hidden="true"
+                strokeWidth={1.25}
+                className="pointer-events-none relative mb-6 size-16 self-center text-white/25 sm:size-20"
+              />
+              <h3 className="relative text-xl font-medium text-white">{item.title}</h3>
+              <p className="relative mt-3 max-w-[30ch] text-sm leading-relaxed text-white/55">
+                {item.description}
+              </p>
+            </Reveal>
           ))}
         </div>
       </Container>

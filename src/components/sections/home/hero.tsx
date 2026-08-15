@@ -6,8 +6,8 @@ import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constant
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy text-navy-foreground">
-      <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
-        <div>
+      <Container className="grid gap-10 py-12 text-center sm:py-16 lg:grid-cols-2 lg:items-center lg:py-28 lg:text-left">
+        <div className="order-2 flex flex-col items-center lg:order-1 lg:items-start">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-card px-3 py-1 text-xs font-medium text-navy-muted ring-1 ring-white/10">
             <Star className="size-3.5 fill-primary text-primary" aria-hidden="true" />
             {BUSINESS.rating.value.toFixed(1)} no Google ({BUSINESS.rating.count} avaliações)
@@ -15,7 +15,7 @@ export function Hero() {
 
           <h1 className="mt-5 text-4xl leading-tight font-semibold sm:text-5xl lg:text-[3.25rem]">
             Higienização profissional de estofados, direto na sua casa em{" "}
-            <span className="text-primary">Taboão da Serra</span>
+            <span className="hero-underline text-primary">Taboão da Serra</span>
           </h1>
 
           <p className="mt-5 max-w-xl text-base text-navy-muted sm:text-lg">
@@ -24,7 +24,7 @@ export function Hero() {
             preservam o tecido. Levamos toda a estrutura até você.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
             <Button
               variant="cta-white"
               size="xl"
@@ -40,7 +40,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-navy-muted">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-navy-muted lg:justify-start">
             <span className="flex items-center gap-1.5">
               <Sparkles className="size-4 text-primary" aria-hidden="true" />
               Atendimento a domicílio
@@ -52,7 +52,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="order-1 relative lg:order-2">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-navy-card via-navy to-primary/20 ring-1 ring-white/10">
             <div
               className="absolute inset-0 opacity-40"

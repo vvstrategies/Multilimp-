@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { BreadcrumbBar } from "@/components/sections/areas/breadcrumbs";
+import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
 import { LOCATIONS } from "@/data/locations";
 import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
@@ -25,14 +25,14 @@ export default function AreasAtendidasPage() {
         ])}
       />
 
-      <BreadcrumbBar
-        items={[{ label: "Início", href: "/" }, { label: "Áreas Atendidas" }]}
-      />
-
       {/* Hero */}
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
-          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <Breadcrumbs
+            variant="dark"
+            items={[{ label: "Início", href: "/" }, { label: "Áreas Atendidas" }]}
+          />
+          <h1 className="mt-6 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Áreas Atendidas pela GS Vitaliza
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-navy-muted">

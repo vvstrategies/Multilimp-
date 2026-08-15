@@ -43,12 +43,12 @@ function getServiceIcon(slug: string) {
 function HeroImagePlaceholder({ icon: Icon }: { icon: ComponentType<{ className?: string }> }) {
   return (
     <div
-      className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-3xl bg-muted ring-1 ring-border"
+      className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-navy-card via-navy to-primary/20 ring-1 ring-white/10"
       aria-hidden="true"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
-      <div className="relative flex flex-col items-center gap-3 text-muted-foreground">
-        <span className="flex size-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+      <div className="relative flex flex-col items-center gap-3 text-navy-muted">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white/10 text-primary ring-1 ring-white/20 backdrop-blur-sm">
           <Icon className="size-8" />
         </span>
         <span className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase">
@@ -62,21 +62,21 @@ function HeroImagePlaceholder({ icon: Icon }: { icon: ComponentType<{ className?
 
 function Breadcrumb({ shortName }: { shortName: string }) {
   return (
-    <nav aria-label="Breadcrumb" className="pt-6 pb-2 text-sm text-muted-foreground">
+    <nav aria-label="Breadcrumb" className="pt-6 pb-2 text-sm text-navy-muted">
       <ol className="flex flex-wrap items-center gap-1.5">
         <li className="flex items-center gap-1.5">
-          <Link href="/" className="hover:text-foreground">
+          <Link href="/" className="hover:text-navy-foreground">
             Início
           </Link>
           <ChevronRight className="size-3.5" aria-hidden="true" />
         </li>
         <li className="flex items-center gap-1.5">
-          <Link href="/servicos" className="hover:text-foreground">
+          <Link href="/servicos" className="hover:text-navy-foreground">
             Serviços
           </Link>
           <ChevronRight className="size-3.5" aria-hidden="true" />
         </li>
-        <li aria-current="page" className="font-medium text-foreground">
+        <li aria-current="page" className="font-medium text-navy-foreground">
           {shortName}
         </li>
       </ol>
@@ -100,21 +100,19 @@ export function ServicePageTemplate({
 
   return (
     <>
-      {/* Breadcrumb */}
-      <Container>
-        <Breadcrumb shortName={service.shortName} />
-      </Container>
-
       {/* Hero */}
-      <section className="pt-6 pb-16 sm:pt-8 sm:pb-20">
-        <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <section className="bg-navy text-navy-foreground pt-6 pb-16 sm:pt-8 sm:pb-20">
+        <Container>
+          <Breadcrumb shortName={service.shortName} />
+        </Container>
+        <Container className="mt-6 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              <Badge variant="secondary" className="gap-1.5">
+              <Badge className="gap-1.5 border-white/15 bg-navy-card text-navy-muted">
                 <MapPin className="size-3" aria-hidden="true" />
                 Atendimento a domicílio
               </Badge>
-              <Badge variant="outline" className="gap-1.5">
+              <Badge className="gap-1.5 border-white/15 bg-navy-card text-navy-muted">
                 <Star className="size-3 fill-primary text-primary" aria-hidden="true" />
                 {BUSINESS.rating.value.toFixed(1)} ({BUSINESS.rating.count} avaliações)
               </Badge>
@@ -123,13 +121,11 @@ export function ServicePageTemplate({
             <h1 className="mt-4 text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
               {service.heroHeadline}
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-muted-foreground">
-              {service.heroSubheadline}
-            </p>
+            <p className="mt-5 max-w-xl text-lg text-navy-muted">{service.heroSubheadline}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
-                variant="cta"
+                variant="cta-white"
                 size="xl"
                 render={
                   <a
@@ -141,7 +137,7 @@ export function ServicePageTemplate({
               >
                 Solicitar orçamento gratuito
               </Button>
-              <Button variant="outline" size="xl" render={<Link href="/servicos" />}>
+              <Button variant="cta-outline" size="xl" render={<Link href="/servicos" />}>
                 Ver todos os serviços
               </Button>
             </div>
@@ -153,7 +149,7 @@ export function ServicePageTemplate({
               <img
                 src={service.heroImage}
                 alt={service.heroHeadline}
-                className="aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-border"
+                className="aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-white/10"
               />
             ) : (
               <HeroImagePlaceholder icon={Icon} />

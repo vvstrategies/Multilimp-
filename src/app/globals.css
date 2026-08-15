@@ -61,8 +61,8 @@
   --card-foreground: oklch(0.16 0.02 258);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.16 0.02 258);
-  --primary: oklch(0.55 0.22 260);
-  --primary-foreground: oklch(0.99 0 0);
+  --primary: #1e6aff;
+  --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0.01 258);
   --secondary-foreground: oklch(0.16 0.02 258);
   --muted: oklch(0.97 0.01 258);
@@ -72,8 +72,8 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.91 0.01 258);
   --input: oklch(0.91 0.01 258);
-  --ring: oklch(0.55 0.22 260);
-  --chart-1: oklch(0.55 0.22 260);
+  --ring: #1e6aff;
+  --chart-1: #1e6aff;
   --chart-2: oklch(0.65 0.18 260);
   --chart-3: oklch(0.75 0.12 260);
   --chart-4: oklch(0.45 0.18 260);
@@ -81,20 +81,27 @@
   --radius: 1rem;
   --sidebar: oklch(0.99 0 0);
   --sidebar-foreground: oklch(0.16 0.02 258);
-  --sidebar-primary: oklch(0.55 0.22 260);
+  --sidebar-primary: #1e6aff;
   --sidebar-primary-foreground: oklch(0.99 0 0);
   --sidebar-accent: oklch(0.97 0.01 258);
   --sidebar-accent-foreground: oklch(0.16 0.02 258);
   --sidebar-border: oklch(0.91 0.01 258);
-  --sidebar-ring: oklch(0.55 0.22 260);
+  --sidebar-ring: #1e6aff;
 
   /* GS Vitaliza brand: dark-navy + electric-blue system adapted from the
-     Vizentec visual reference (measured via getComputedStyle on the live
-     page, not estimated). Used for hero/CTA/footer sections. */
-  --navy: oklch(0.17 0.03 258);
-  --navy-card: oklch(0.22 0.04 258);
-  --navy-foreground: oklch(0.99 0 0);
-  --navy-muted-foreground: oklch(0.99 0 0 / 70%);
+     Vizentec visual reference. Exact hex values pulled straight from
+     Vizentec's own CSS custom properties (--primary, --primary-deep,
+     --accent, --surface, --muted), not estimated. */
+  --navy: #070f1c;
+  --navy-card: #0b1a2e;
+  --navy-surface: #0f2340;
+  --navy-surface-light: #162b4d;
+  --navy-foreground: #ffffff;
+  --navy-muted-foreground: rgba(255, 255, 255, 0.7);
+  --navy-muted-text: #8da2c0;
+  --accent-hover: #3b7fff;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
 }
 
 .dark {
@@ -149,6 +156,143 @@
   }
 }
 
+/* Scroll-reveal primitive (see components/motion/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero keyword highlight — ported from Vizentec's .hero-underline */
+.hero-underline {
+  position: relative;
+  display: inline;
+  padding: 2px 6px;
+  margin: 0 -6px;
+}
+.hero-underline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+.hero-underline.reveal-in::before {
+  animation: highlightSlide 0.8s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+@keyframes highlightSlide {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+}
+
+/* Process timeline — ported from Vizentec's .impl-timeline-* structure */
+.timeline-line-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 81px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 1px;
+  pointer-events: none;
+}
+.timeline-line-draw {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  opacity: 0;
+  background: linear-gradient(90deg, var(--border), var(--primary) 60%, var(--primary));
+}
+.reveal-in .timeline-line-draw {
+  animation: timelineLineReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.12s;
+}
+@keyframes timelineLineReveal {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.timeline-steps:hover .timeline-step {
+  opacity: 0.5;
+  filter: blur(4px);
+}
+.timeline-steps:hover .timeline-step:hover {
+  opacity: 1;
+  filter: none;
+}
+@media (max-width: 767px) {
+  .timeline-steps:hover .timeline-step {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* Differentiator cards — ported from Vizentec's .card-seguranca interaction */
+.diff-card {
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease,
+    opacity 0.4s ease,
+    filter 0.4s ease;
+}
+.diff-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.diff-grid:hover .diff-card:not(:hover) {
+  opacity: 0.55;
+  filter: blur(1.5px);
+}
+@media (max-width: 767px) {
+  .diff-grid:hover .diff-card:not(:hover) {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+/* CTA micro-interactions — ported from Vizentec's .btn-accent */
+.btn-cta-arrow {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-cta-label {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+a:hover > .btn-cta-arrow,
+button:hover > .btn-cta-arrow {
+  transform: translateX(4px);
+}
+a:hover > .btn-cta-label,
+button:hover > .btn-cta-label {
+  transform: translateX(-4px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -160,5 +304,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

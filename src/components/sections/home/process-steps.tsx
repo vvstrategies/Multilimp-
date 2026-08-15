@@ -1,5 +1,6 @@
 import { CheckCircle2, MessageCircle, Sparkles, Truck } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/motion/reveal";
 
 const STEPS = [
   {
@@ -28,29 +29,35 @@ export function ProcessSteps() {
   return (
     <section className="py-16 sm:py-24">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-semibold sm:text-4xl">Como funciona</h2>
           <p className="mt-4 text-base text-muted-foreground sm:text-lg">
             Um processo simples, do primeiro contato ao resultado final.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {STEPS.map((step, index) => (
-            <div key={step.title} className="relative">
-              <div className="flex items-center gap-3">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow">
-                  <step.icon className="size-5" aria-hidden="true" />
+        <Reveal as="div" delay={150} className="relative mt-16">
+          <div className="timeline-line-wrap hidden sm:block">
+            <div className="timeline-line-draw" />
+          </div>
+
+          <div className="timeline-steps grid gap-10 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-14 lg:grid-cols-4">
+            {STEPS.map((step, index) => (
+              <div key={step.title} className="timeline-step flex flex-col items-center text-center transition-[opacity,filter] duration-300">
+                <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-glow">
+                  <step.icon className="size-6" aria-hidden="true" />
                 </span>
-                <span className="font-heading text-sm font-semibold text-muted-foreground">
-                  Passo {index + 1}
-                </span>
+                <span
+                  aria-hidden="true"
+                  className="relative z-[1] mt-5 size-2.5 rounded-full bg-primary ring-4 ring-background"
+                />
+                <span className="mt-2 text-sm font-medium text-muted-foreground">Passo {index + 1}</span>
+                <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+                <p className="mt-2 max-w-[26ch] text-sm text-muted-foreground">{step.description}</p>
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

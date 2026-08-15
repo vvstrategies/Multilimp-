@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { BreadcrumbBar } from "@/components/sections/areas/breadcrumbs";
-import { FEATURED_REVIEWS, ReviewCard } from "@/components/sections/reviews/review-card";
+import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
+import { ReviewCard } from "@/components/sections/reviews/review-card";
+import { ReviewsHeader } from "@/components/sections/reviews/reviews-header";
+import { REVIEWS } from "@/data/reviews";
 import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, localBusinessJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -25,12 +27,11 @@ export default function AvaliacoesPage() {
       />
       <JsonLd data={localBusinessJsonLd()} />
 
-      <BreadcrumbBar items={[{ label: "Início", href: "/" }, { label: "Avaliações" }]} />
-
       {/* Hero */}
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
-          <h1 className="max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <Breadcrumbs variant="dark" items={[{ label: "Início", href: "/" }, { label: "Avaliações" }]} />
+          <h1 className="mt-6 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
             Avaliações de quem já confiou na GS Vitaliza
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -64,20 +65,33 @@ export default function AvaliacoesPage() {
         </Container>
       </section>
 
-      {/* Featured reviews */}
+      {/* All reviews */}
       <section className="py-14 sm:py-16">
         <Container>
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Depoimentos em destaque
+            {REVIEWS.length} avaliações reais no Google
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Alguns dos comentários reais deixados por clientes no perfil do Google da GS Vitaliza.
+            Todos os comentários abaixo foram copiados diretamente do perfil do Google da GS
+            Vitaliza, sem seleção nem edição de conteúdo.
           </p>
+
+          <ReviewsHeader className="mt-8 rounded-2xl bg-card p-5 ring-1 ring-border" />
+
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_REVIEWS.map((review) => (
+            {REVIEWS.map((review) => (
               <ReviewCard key={review.name} review={review} />
             ))}
           </div>
+
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            {BUSINESS.rating.count - REVIEWS.length > 0
+              ? `${REVIEWS.length} de ${BUSINESS.rating.count} avaliações exibidas. `
+              : null}
+            <a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline">
+              Ver o perfil completo no Google
+            </a>
+          </p>
         </Container>
       </section>
 

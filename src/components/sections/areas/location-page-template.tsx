@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, MapPin, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { BreadcrumbBar } from "@/components/sections/areas/breadcrumbs";
+import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
 import { BUSINESS, SERVICES_NAV, whatsappHref } from "@/lib/constants";
 import type { LocationDefinition } from "@/types/location";
 
@@ -18,18 +18,18 @@ export function LocationPageTemplate({
 
   return (
     <>
-      <BreadcrumbBar
-        items={[
-          { label: "Início", href: "/" },
-          { label: "Áreas Atendidas", href: "/areas-atendidas" },
-          { label: location.city },
-        ]}
-      />
-
       {/* Hero */}
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
-          <div className="flex items-center gap-2 text-sm font-medium text-navy-muted">
+          <Breadcrumbs
+            variant="dark"
+            items={[
+              { label: "Início", href: "/" },
+              { label: "Áreas Atendidas", href: "/areas-atendidas" },
+              { label: location.city },
+            ]}
+          />
+          <div className="mt-6 flex items-center gap-2 text-sm font-medium text-navy-muted">
             <MapPin className="size-4 shrink-0" aria-hidden="true" />
             {location.region}
           </div>
