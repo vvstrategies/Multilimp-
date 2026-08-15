@@ -36,7 +36,6 @@ export default function Home() {
       <Hero />
       <SectionDivider href="#servicos" label="Ver os serviços" />
       <ServicesGrid />
-      <SectionDivider href="#diferenciais" label="Ver os diferenciais" />
       <Differentiators />
       <ProcessSteps />
       <ResultsTeaser />

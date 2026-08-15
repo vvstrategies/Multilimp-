@@ -62,6 +62,7 @@ export function Hero() {
               alt="Técnico da GS Vitaliza com equipamento profissional de higienização de estofados"
               fill
               priority
+              quality={92}
               sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover object-[50%_28%]"
             />
