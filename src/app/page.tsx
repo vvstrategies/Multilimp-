@@ -9,6 +9,7 @@ import { AreasServed } from "@/components/sections/home/areas-served";
 import { AboutTeaser } from "@/components/sections/home/about-teaser";
 import { FaqPreview, FAQ_PREVIEW_ITEMS } from "@/components/sections/home/faq-preview";
 import { CtaBanner } from "@/components/sections/home/cta-banner";
+import { SectionDivider } from "@/components/layout/section-divider";
 
 export const metadata = pageMetadata({
   title: "GS Vitaliza | Higienização de Estofados em Taboão da Serra",
@@ -33,7 +34,9 @@ export default function Home() {
       <JsonLd data={faqJsonLd(FAQ_PREVIEW_ITEMS)} />
 
       <Hero />
+      <SectionDivider href="#servicos" label="Ver os serviços" />
       <ServicesGrid />
+      <SectionDivider href="#diferenciais" label="Ver os diferenciais" />
       <Differentiators />
       <ProcessSteps />
       <ResultsTeaser />

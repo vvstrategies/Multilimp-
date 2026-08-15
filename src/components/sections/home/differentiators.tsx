@@ -43,7 +43,7 @@ const ITEMS: { icon: LucideIcon; title: string; description: string }[] = [
 
 export function Differentiators() {
   return (
-    <section className="bg-navy py-16 text-navy-foreground sm:py-24">
+    <section id="diferenciais" className="bg-navy py-16 text-navy-foreground sm:py-20">
       <Container>
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
           <h2 className="">Por que escolher a GS Vitaliza</h2>

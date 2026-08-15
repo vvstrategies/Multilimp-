@@ -1,4 +1,5 @@
-import { House, MapPin, Sparkles, Star } from "lucide-react";
+import Image from "next/image";
+import { House, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 
@@ -55,20 +56,19 @@ export function Hero() {
         </div>
 
         <div className="order-1 relative lg:order-2">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-navy-card via-navy to-primary/20 ring-1 ring-white/10">
-            <div
-              className="absolute inset-0 opacity-40"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 20% 20%, rgb(30 106 255 / 0.5), transparent 45%), radial-gradient(circle at 80% 70%, rgb(30 106 255 / 0.35), transparent 50%)",
-              }}
-              aria-hidden="true"
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-navy-card ring-1 ring-white/10">
+            <Image
+              src="/images/tecnico-gs-vitaliza.webp"
+              alt="Técnico da GS Vitaliza com equipamento profissional de higienização de estofados"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 500px"
+              className="object-cover object-[50%_28%]"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="flex size-20 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur-sm">
-                <Sparkles className="size-9 text-primary" aria-hidden="true" />
-              </span>
-            </div>
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent"
+            />
           </div>
         </div>
       </div>

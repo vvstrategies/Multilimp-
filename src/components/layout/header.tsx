@@ -116,9 +116,22 @@ export function Header() {
     };
   }, []);
 
+  // The shadcn defaults tint hover/open states with `bg-muted`, which is a light
+  // grey that kills contrast against white text on the dark nav. Restate the
+  // state backgrounds per surface so the active item stays legible either way.
   const linkClass = cn(
     "transition-colors duration-200",
-    onDark ? "text-white/90 hover:text-white" : "text-foreground/80 hover:text-foreground"
+    onDark
+      ? "text-white/90 hover:bg-white/10 hover:text-white focus:bg-white/10"
+      : "text-foreground/80 hover:bg-foreground/8 hover:text-foreground focus:bg-foreground/8"
+  );
+
+  const triggerClass = cn(
+    linkClass,
+    "bg-transparent",
+    onDark
+      ? "data-open:bg-white/12 data-open:text-white data-open:hover:bg-white/16 data-open:focus:bg-white/16 data-popup-open:bg-white/12 data-popup-open:text-white data-popup-open:hover:bg-white/16"
+      : "data-open:bg-foreground/8 data-open:text-foreground data-open:hover:bg-foreground/12 data-open:focus:bg-foreground/12 data-popup-open:bg-foreground/8 data-popup-open:text-foreground data-popup-open:hover:bg-foreground/12"
   );
 
   return (
@@ -149,17 +162,17 @@ export function Header() {
           <NavigationMenu>
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/" />} className={cn(linkClass, "hover:bg-transparent focus:bg-transparent")}>
+                <NavigationMenuLink render={<Link href="/" />} className={linkClass}>
                   Início
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/sobre" />} className={cn(linkClass, "hover:bg-transparent focus:bg-transparent")}>
+                <NavigationMenuLink render={<Link href="/sobre" />} className={linkClass}>
                   Sobre
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn(linkClass, "bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent")}>
+                <NavigationMenuTrigger className={triggerClass}>
                   Serviços
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -181,7 +194,7 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn(linkClass, "bg-transparent hover:bg-transparent focus:bg-transparent data-popup-open:bg-transparent data-open:bg-transparent")}>
+                <NavigationMenuTrigger className={triggerClass}>
                   Áreas Atendidas
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -200,17 +213,17 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/avaliacoes" />} className={cn(linkClass, "hover:bg-transparent focus:bg-transparent")}>
+                <NavigationMenuLink render={<Link href="/avaliacoes" />} className={linkClass}>
                   Avaliações
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/blog" />} className={cn(linkClass, "hover:bg-transparent focus:bg-transparent")}>
+                <NavigationMenuLink render={<Link href="/blog" />} className={linkClass}>
                   Blog
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink render={<Link href="/contato" />} className={cn(linkClass, "hover:bg-transparent focus:bg-transparent")}>
+                <NavigationMenuLink render={<Link href="/contato" />} className={linkClass}>
                   Contato
                 </NavigationMenuLink>
               </NavigationMenuItem>
