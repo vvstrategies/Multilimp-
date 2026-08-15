@@ -11,7 +11,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "taboao-da-serra",
     city: "Taboão da Serra",
     region: "Grande São Paulo",
-    metaTitle: "Higienização de Estofados em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Taboão da Serra",
     metaDescription:
       "Higienização profissional de sofás, colchões, bancos automotivos e tapetes em Taboão da Serra, direto na sua casa. Peça um orçamento gratuito pelo WhatsApp.",
     heroHeadline: "Higienização de Estofados em Taboão da Serra",
@@ -30,7 +30,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "osasco",
     city: "Osasco",
     region: "Grande São Paulo",
-    metaTitle: "Higienização de Estofados em Osasco | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Osasco",
     metaDescription:
       "Limpeza profissional de sofás, colchões, bancos automotivos e tapetes em Osasco, com atendimento a domicílio. Solicite um orçamento gratuito pelo WhatsApp.",
     heroHeadline: "Higienização de Estofados em Osasco",
@@ -49,7 +49,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "santo-amaro",
     city: "Santo Amaro",
     region: "Zona Sul de São Paulo (Capital)",
-    metaTitle: "Higienização de Estofados em Santo Amaro - SP | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Santo Amaro - SP",
     metaDescription:
       "Higienização de sofás, colchões, bancos automotivos e tapetes em Santo Amaro, zona sul de São Paulo. Atendimento a domicílio. Peça seu orçamento gratuito.",
     heroHeadline: "Higienização de Estofados em Santo Amaro",
@@ -68,7 +68,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "embu-das-artes",
     city: "Embu das Artes",
     region: "Região Oeste da Grande São Paulo",
-    metaTitle: "Higienização de Estofados em Embu das Artes | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Embu das Artes",
     metaDescription:
       "Limpeza de sofás, colchões, bancos automotivos e tapetes em Embu das Artes. Atendimento a domicílio mediante disponibilidade. Solicite um orçamento.",
     heroHeadline: "Higienização de Estofados em Embu das Artes",
@@ -87,7 +87,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "itapevi",
     city: "Itapevi",
     region: "Região Oeste da Grande São Paulo",
-    metaTitle: "Higienização de Estofados em Itapevi | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Itapevi",
     metaDescription:
       "Higienização profissional de sofás, colchões, bancos automotivos e tapetes em Itapevi. Atendimento sob consulta de disponibilidade. Peça um orçamento.",
     heroHeadline: "Higienização de Estofados em Itapevi",
@@ -106,7 +106,7 @@ export const LOCATIONS: LocationDefinition[] = [
     slug: "cotia",
     city: "Cotia",
     region: "Região Oeste da Grande São Paulo",
-    metaTitle: "Higienização de Estofados em Cotia | GS Vitaliza",
+    metaTitle: "Higienização de Estofados em Cotia",
     metaDescription:
       "Limpeza profissional de sofás, colchões, bancos automotivos e tapetes em Cotia. Atendimento a domicílio sob consulta. Solicite um orçamento gratuito.",
     heroHeadline: "Higienização de Estofados em Cotia",

@@ -7,7 +7,7 @@ import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Antes e Depois | GS Vitaliza",
+  title: "Antes e Depois | Resultados de Higienização de Estofados",
   description:
     "Veja como a higienização profissional da GS Vitaliza transforma sofás, colchões, bancos automotivos e tapetes. Galeria em atualização com novos casos reais.",
   path: "/antes-e-depois",

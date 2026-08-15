@@ -7,7 +7,7 @@ import { StatsRow } from "@/components/sections/home/stats-row";
 import { CtaBanner } from "@/components/sections/home/cta-banner";
 
 export const metadata = pageMetadata({
-  title: "Sobre a GS Vitaliza | Higienização de Estofados",
+  title: "Sobre a Empresa | Higienização de Estofados em Taboão da Serra",
   description:
     "Conheça a GS Vitaliza: especialistas em higienização de sofás, colchões, bancos automotivos e tapetes, com atendimento a domicílio em Taboão da Serra e região e nota 5,0 no Google.",
   path: "/sobre",

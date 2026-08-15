@@ -5,7 +5,7 @@ export const SERVICES: ServiceDefinition[] = [
     slug: "sofas-e-estofados",
     name: "Higienização de Sofás e Estofados",
     shortName: "Sofás e Estofados",
-    metaTitle: "Higienização de Sofá em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Higienização de Sofá em Taboão da Serra",
     metaDescription:
       "Limpeza profunda de sofás, poltronas e cadeiras estofadas em Taboão da Serra, Osasco e Santo Amaro. Atendimento a domicílio, produtos que não danificam o tecido. Peça um orçamento gratuito.",
     heroHeadline: "Higienização de Sofás e Estofados em Taboão da Serra",
@@ -150,7 +150,7 @@ export const SERVICES: ServiceDefinition[] = [
     slug: "colchoes",
     name: "Higienização de Colchões",
     shortName: "Colchões",
-    metaTitle: "Higienização de Colchão em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Higienização de Colchão em Taboão da Serra",
     metaDescription:
       "Limpeza profissional de colchões de solteiro, casal, queen e king em Taboão da Serra e região. Eliminação de ácaros, fungos e odores com atendimento a domicílio. Orçamento gratuito.",
     heroHeadline: "Higienização de Colchões em Taboão da Serra",
@@ -294,7 +294,7 @@ export const SERVICES: ServiceDefinition[] = [
     slug: "bancos-automotivos",
     name: "Higienização de Bancos Automotivos",
     shortName: "Bancos Automotivos",
-    metaTitle: "Higienização de Bancos de Carro em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Higienização de Bancos de Carro em Taboão da Serra",
     metaDescription:
       "Limpeza profissional de bancos automotivos de tecido e couro em Taboão da Serra e região. Remove odores, manchas e sujeira do carro que você usa todos os dias. Orçamento gratuito.",
     heroHeadline: "Higienização de Bancos Automotivos em Taboão da Serra",
@@ -438,7 +438,7 @@ export const SERVICES: ServiceDefinition[] = [
     slug: "tapetes-e-carpetes",
     name: "Higienização de Tapetes e Carpetes",
     shortName: "Tapetes e Carpetes",
-    metaTitle: "Higienização de Tapetes em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Higienização de Tapetes em Taboão da Serra",
     metaDescription:
       "Lavagem profissional de tapetes, carpetes e capachos em Taboão da Serra e região. Remove sujeira encravada nas fibras, ácaros e odores. Atendimento a domicílio, orçamento gratuito.",
     heroHeadline: "Higienização de Tapetes e Carpetes em Taboão da Serra",
@@ -581,7 +581,7 @@ export const SERVICES: ServiceDefinition[] = [
     slug: "impermeabilizacao-de-estofados",
     name: "Impermeabilização de Estofados",
     shortName: "Impermeabilização",
-    metaTitle: "Impermeabilização de Estofados em Taboão da Serra | GS Vitaliza",
+    metaTitle: "Impermeabilização de Estofados em Taboão da Serra",
     metaDescription:
       "Proteção contra líquidos, manchas e desgaste para sofás, poltronas e bancos automotivos em Taboão da Serra e região. Atendimento a domicílio, orçamento gratuito.",
     heroHeadline: "Impermeabilização de Estofados em Taboão da Serra",

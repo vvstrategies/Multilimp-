@@ -8,7 +8,7 @@ import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constant
 import { breadcrumbJsonLd, JsonLd, localBusinessJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Avaliações | GS Vitaliza",
+  title: "Avaliações de Clientes | Nota 5,0 no Google",
   description:
     "GS Vitaliza tem nota 5,0 com 49 avaliações no Google. Confira depoimentos reais de clientes e avalie você também o nosso atendimento.",
   path: "/avaliacoes",

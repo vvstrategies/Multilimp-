@@ -9,7 +9,7 @@ import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Áreas Atendidas | GS Vitaliza",
+  title: "Áreas Atendidas | Higienização de Estofados na Grande São Paulo",
   description:
     "A GS Vitaliza atende Taboão da Serra e cidades da região oeste da Grande São Paulo. Veja as cidades atendidas e consulte disponibilidade para a sua região.",
   path: "/areas-atendidas",
