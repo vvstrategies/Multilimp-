@@ -13,7 +13,10 @@ export function pageMetadata({
   images?: string[];
 }): Metadata {
   const url = `${SITE_URL}${path}`;
-  const ogImages = images && images.length > 0 ? images : ["/seo/og-default.jpg"];
+  // When no page-specific image is given, omit `images` so Next.js's
+  // file-convention `opengraph-image.tsx` supplies the default OG image
+  // automatically instead of pointing at a path that may not exist.
+  const ogImages = images && images.length > 0 ? images : undefined;
 
   return {
     title,
@@ -26,13 +29,13 @@ export function pageMetadata({
       siteName: SITE_NAME,
       locale: "pt_BR",
       type: "website",
-      images: ogImages,
+      ...(ogImages ? { images: ogImages } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ogImages,
+      ...(ogImages ? { images: ogImages } : {}),
     },
   };
 }
@@ -61,7 +64,7 @@ export function localBusinessJsonLd(areasServed: string[] = []) {
     url: SITE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: "$$",
-    image: `${SITE_URL}/seo/og-default.jpg`,
+    image: `${SITE_URL}/opengraph-image`,
     address: addressJsonLd(),
     ...(BUSINESS.geo
       ? {
