@@ -33,10 +33,10 @@ export function LocationPageTemplate({
             <MapPin className="size-4 shrink-0" aria-hidden="true" />
             {location.region}
           </div>
-          <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-3 max-w-3xl">
             {location.heroHeadline}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-navy-muted">{location.heroSubheadline}</p>
+          <p className="mt-5 max-w-2xl text-base text-navy-muted">{location.heroSubheadline}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button
               variant="cta-white"
@@ -58,14 +58,14 @@ export function LocationPageTemplate({
       {/* Intro */}
       <section className="py-14 sm:py-16">
         <Container className="max-w-3xl">
-          <p className="text-lg leading-relaxed text-foreground">{location.intro}</p>
+          <p className="text-base leading-relaxed text-foreground">{location.intro}</p>
         </Container>
       </section>
 
       {/* Local context */}
       <section className="border-t border-border bg-muted/40 py-14 sm:py-16">
         <Container className="max-w-3xl">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="">
             Atendimento em {location.city}
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">{location.localContext}</p>
@@ -76,7 +76,7 @@ export function LocationPageTemplate({
       {/* Services */}
       <section className="py-14 sm:py-16">
         <Container>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="">
             Serviços disponíveis em {location.city}
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -146,7 +146,7 @@ export function LocationPageTemplate({
       {/* Other areas */}
       <section className="py-14 sm:py-16">
         <Container>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="">
             Outras áreas atendidas
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -178,7 +178,7 @@ export function LocationPageTemplate({
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="">
               Pronto para higienizar seus estofados em {location.city}?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">

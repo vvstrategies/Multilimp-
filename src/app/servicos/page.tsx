@@ -90,10 +90,10 @@ export default function ServicosPage() {
                 {BUSINESS.rating.value.toFixed(1)} ({BUSINESS.rating.count} avaliações)
               </Badge>
             </div>
-            <h1 className="mt-4 text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-4">
               Serviços de Higienização de Estofados
             </h1>
-            <p className="mt-5 text-lg text-navy-muted">
+            <p className="mt-5 text-base text-navy-muted">
               A GS Vitaliza higieniza sofás, colchões, bancos automotivos, tapetes e carpetes, e
               também aplica impermeabilização de estofados. Todo o atendimento é feito a
               domicílio, em residências e empresas, com produtos profissionais que não danificam
@@ -130,7 +130,7 @@ export default function ServicosPage() {
                     <span className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Icon className="size-6" aria-hidden="true" />
                     </span>
-                    <h2 className="mt-4 font-heading text-xl font-semibold">
+                    <h2 className="mt-4 font-heading">
                       {service.shortName}
                     </h2>
                     <p className="mt-2 text-sm text-muted-foreground">
@@ -152,7 +152,7 @@ export default function ServicosPage() {
       <section className="bg-muted/40 py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="">
               Como escolher o serviço certo
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -163,7 +163,7 @@ export default function ServicosPage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
             {CHOICE_TIPS.map((tip) => (
               <div key={tip.title} className="rounded-2xl bg-background p-6 ring-1 ring-border">
-                <h3 className="font-heading text-base font-semibold">{tip.title}</h3>
+                <h3 className="font-heading">{tip.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{tip.description}</p>
               </div>
             ))}
@@ -174,7 +174,7 @@ export default function ServicosPage() {
       {/* Final CTA */}
       <section className="bg-navy py-16 text-navy-foreground sm:py-20">
         <Container className="flex flex-col items-center gap-6 text-center">
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="max-w-2xl">
             Vamos cuidar do seu estofado?
           </h2>
           <p className="max-w-xl text-navy-muted">

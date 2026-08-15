@@ -148,11 +148,26 @@
   html {
     @apply font-sans scroll-smooth;
   }
+  /* Single typographic scale for the whole site, sized to match the agreed
+     reference (h1/h2 32px desktop, body 16px). Components should not set their
+     own heading font sizes so every page stays consistent. */
   h1,
   h2,
   h3,
   h4 {
     @apply font-heading tracking-tight;
+  }
+  h1 {
+    @apply text-[26px] leading-[1.28] font-semibold sm:text-[32px] sm:leading-[1.32];
+  }
+  h2 {
+    @apply text-[22px] leading-[1.25] font-semibold sm:text-[32px] sm:leading-[1.2];
+  }
+  h3 {
+    @apply text-[17px] leading-[1.35] font-semibold sm:text-[19px];
+  }
+  h4 {
+    @apply text-[15px] leading-[1.4] font-semibold sm:text-base;
   }
 }
 

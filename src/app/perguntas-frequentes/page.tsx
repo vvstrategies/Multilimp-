@@ -36,7 +36,7 @@ export default function FaqPage() {
       <section className="bg-navy text-navy-foreground">
         <Container className="py-16 sm:py-20">
           <p className="text-sm font-semibold tracking-wide text-primary uppercase">FAQ</p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl">
             Perguntas frequentes sobre a higienização de estofados
           </h1>
           <p className="mt-4 max-w-2xl text-navy-muted">
@@ -51,7 +51,7 @@ export default function FaqPage() {
           <div className="space-y-12">
             {CATEGORIES.map((category) => (
               <div key={category}>
-                <h2 className="text-xl font-semibold text-foreground">{category}</h2>
+                <h2 className="text-foreground">{category}</h2>
                 <Accordion className="mt-4">
                   {GENERAL_FAQS.filter((faq) => faq.category === category).map((faq) => (
                     <AccordionItem key={faq.question} value={faq.question}>
@@ -67,7 +67,7 @@ export default function FaqPage() {
           </div>
 
           <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-muted px-6 py-10 text-center ring-1 ring-border sm:px-10">
-            <h2 className="text-2xl font-semibold">Ainda tem dúvidas?</h2>
+            <h2 className="">Ainda tem dúvidas?</h2>
             <p className="max-w-xl text-muted-foreground">
               Fale diretamente com a nossa equipe pelo WhatsApp e solicite um orçamento gratuito para
               o seu caso.

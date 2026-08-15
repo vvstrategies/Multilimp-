@@ -31,7 +31,7 @@ export default function AvaliacoesPage() {
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
           <Breadcrumbs variant="dark" items={[{ label: "Início", href: "/" }, { label: "Avaliações" }]} />
-          <h1 className="mt-6 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-6 max-w-3xl">
             Avaliações de quem já confiou na GS Vitaliza
           </h1>
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -40,7 +40,7 @@ export default function AvaliacoesPage() {
                 <Star key={index} className="size-6 fill-primary text-primary" />
               ))}
             </div>
-            <p className="text-lg text-navy-muted">
+            <p className="text-base text-navy-muted">
               <span className="text-2xl font-semibold text-navy-foreground">
                 {BUSINESS.rating.value.toFixed(1)}
               </span>{" "}
@@ -68,7 +68,7 @@ export default function AvaliacoesPage() {
       {/* All reviews */}
       <section className="py-14 sm:py-16">
         <Container>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="">
             {REVIEWS.length} avaliações reais no Google
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
@@ -99,7 +99,7 @@ export default function AvaliacoesPage() {
       <section className="border-t border-border bg-navy py-16 text-navy-foreground sm:py-20">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="">
               Já foi atendido pela GS Vitaliza?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">

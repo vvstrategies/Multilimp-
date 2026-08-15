@@ -29,7 +29,7 @@ export default function ContatoPage() {
       <section className="bg-navy text-navy-foreground">
         <Container className="py-16 sm:py-20">
           <p className="text-sm font-semibold tracking-wide text-primary uppercase">Contato</p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl">
             Vamos conversar sobre a higienização do seu estofado
           </h1>
           <p className="mt-4 max-w-2xl text-navy-muted">
@@ -44,7 +44,7 @@ export default function ContatoPage() {
           <div className="grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-3">
               <div className="rounded-3xl bg-card p-6 ring-1 ring-border sm:p-8">
-                <h2 className="text-xl font-semibold">Solicite um orçamento</h2>
+                <h2 className="">Solicite um orçamento</h2>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Preencha o formulário abaixo. Vamos abrir o WhatsApp com sua mensagem pronta para
                   você confirmar o envio.
@@ -57,7 +57,7 @@ export default function ContatoPage() {
 
             <div className="space-y-6 lg:col-span-2">
               <div className="rounded-3xl bg-card p-6 ring-1 ring-border sm:p-8">
-                <h2 className="text-xl font-semibold">Informações de contato</h2>
+                <h2 className="">Informações de contato</h2>
                 <ul className="mt-5 space-y-5 text-sm">
                   <li className="flex items-start gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">

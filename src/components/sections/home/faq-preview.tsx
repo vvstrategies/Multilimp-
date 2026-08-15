@@ -42,8 +42,8 @@ export function FaqPreview() {
     <section className="bg-muted/40 py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Perguntas frequentes</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <h2 className="">Perguntas frequentes</h2>
+          <p className="mt-4 text-base text-muted-foreground">
             Tire as principais dúvidas sobre a nossa higienização de estofados.
           </p>
         </div>

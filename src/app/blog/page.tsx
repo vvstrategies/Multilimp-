@@ -26,7 +26,7 @@ export default function BlogPage() {
       <section className="bg-navy text-navy-foreground">
         <Container className="py-16 sm:py-20">
           <p className="text-sm font-semibold tracking-wide text-primary uppercase">Blog</p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl">
             Dicas para manter sofás, colchões e estofados sempre limpos
           </h1>
           <p className="mt-4 max-w-2xl text-navy-muted">
@@ -46,7 +46,7 @@ export default function BlogPage() {
           </div>
 
           <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-muted px-6 py-10 text-center ring-1 ring-border sm:px-10">
-            <h2 className="text-2xl font-semibold">Precisa de uma higienização profissional?</h2>
+            <h2 className="">Precisa de uma higienização profissional?</h2>
             <p className="max-w-xl text-muted-foreground">
               Atendemos a domicílio em Taboão da Serra, Osasco, Santo Amaro, Embu das Artes, Itapevi,
               Cotia e região. Solicite um orçamento gratuito e sem compromisso.

@@ -5,8 +5,8 @@ export function AboutStory() {
   return (
     <section className="py-16 sm:py-24">
       <Container className="mx-auto max-w-3xl">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Como trabalhamos</h2>
-        <div className="mt-6 space-y-5 text-base text-muted-foreground sm:text-lg">
+        <h2 className="">Como trabalhamos</h2>
+        <div className="mt-6 space-y-5 text-base text-muted-foreground">
           <p>
             Somos uma empresa de higienização e conservação de estofados baseada em{" "}
             {BUSINESS.address.city}, com atendimento a domicílio. Isso significa que levamos

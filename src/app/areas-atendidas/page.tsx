@@ -32,10 +32,10 @@ export default function AreasAtendidasPage() {
             variant="dark"
             items={[{ label: "Início", href: "/" }, { label: "Áreas Atendidas" }]}
           />
-          <h1 className="mt-6 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-6 max-w-3xl">
             Áreas Atendidas pela GS Vitaliza
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-navy-muted">
+          <p className="mt-5 max-w-2xl text-base text-navy-muted">
             Higienização profissional de sofás, colchões, bancos automotivos, tapetes e
             impermeabilização de estofados, com atendimento a domicílio em Taboão da Serra e
             cidades da região.
@@ -46,7 +46,7 @@ export default function AreasAtendidasPage() {
       {/* Coverage framing */}
       <section className="py-14 sm:py-16">
         <Container className="max-w-3xl">
-          <p className="text-lg leading-relaxed text-foreground">
+          <p className="text-base leading-relaxed text-foreground">
             A GS Vitaliza é baseada em Taboão da Serra e atende, com cobertura confirmada, Osasco
             e o bairro de Santo Amaro, na zona sul de São Paulo. Também atendemos Embu das Artes,
             Itapevi e Cotia, cidades da região oeste da Grande São Paulo, conforme a
@@ -59,7 +59,7 @@ export default function AreasAtendidasPage() {
       {/* Cities grid */}
       <section className="border-t border-border bg-muted/40 py-14 sm:py-16">
         <Container>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="">
             Cidades atendidas
           </h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -73,7 +73,7 @@ export default function AreasAtendidasPage() {
                   <MapPin className="size-4 shrink-0 text-primary" aria-hidden="true" />
                   {location.region}
                 </div>
-                <p className="text-lg font-semibold">{location.city}</p>
+                <p className="text-base font-semibold">{location.city}</p>
                 <p className="text-sm text-muted-foreground">{location.intro}</p>
                 <span className="mt-1 flex items-center gap-1 text-sm font-medium text-primary">
                   Ver detalhes
@@ -92,7 +92,7 @@ export default function AreasAtendidasPage() {
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="">
               Não encontrou a sua cidade?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">

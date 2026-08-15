@@ -14,8 +14,8 @@ export function CtaBanner({
   return (
     <section className="bg-navy py-16 text-navy-foreground sm:py-20">
       <Container className="flex flex-col items-center gap-6 text-center">
-        <h2 className="max-w-2xl text-3xl font-semibold sm:text-4xl">{title}</h2>
-        <p className="max-w-xl text-base text-navy-muted sm:text-lg">{description}</p>
+        <h2 className="max-w-2xl">{title}</h2>
+        <p className="max-w-xl text-base text-navy-muted">{description}</p>
         <Button
           variant="cta-white"
           size="xl"

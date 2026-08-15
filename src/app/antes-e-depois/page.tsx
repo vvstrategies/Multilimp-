@@ -27,10 +27,10 @@ export default function AntesEDepoisPage() {
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
           <Breadcrumbs variant="dark" items={[{ label: "Início", href: "/" }, { label: "Antes e Depois" }]} />
-          <h1 className="mt-6 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h1 className="mt-6 max-w-3xl">
             Antes e Depois
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-navy-muted">
+          <p className="mt-5 max-w-2xl text-base text-navy-muted">
             Resultados reais da higienização profissional de sofás, colchões, bancos automotivos e
             tapetes feita pela GS Vitaliza.
           </p>
@@ -40,7 +40,7 @@ export default function AntesEDepoisPage() {
       {/* Intro + honesty note */}
       <section className="py-14 sm:py-16">
         <Container className="max-w-3xl">
-          <p className="text-lg leading-relaxed text-foreground">
+          <p className="text-base leading-relaxed text-foreground">
             Estamos organizando nossa galeria de fotos reais de antes e depois. Enquanto reunimos
             esse material, veja abaixo os tipos de serviço que documentamos em cada atendimento.
           </p>
@@ -62,7 +62,7 @@ export default function AntesEDepoisPage() {
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="">
               Quer ver exemplos de trabalhos recentes?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">

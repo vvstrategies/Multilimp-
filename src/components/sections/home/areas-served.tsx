@@ -9,8 +9,8 @@ export function AreasServed() {
     <section className="bg-muted/40 py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Áreas atendidas</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <h2 className="">Áreas atendidas</h2>
+          <p className="mt-4 text-base text-muted-foreground">
             Atendimento a domicílio em Taboão da Serra e cidades da região.
           </p>
         </div>

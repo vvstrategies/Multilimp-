@@ -20,8 +20,8 @@ export function AboutTeaser() {
           className="mx-auto grid overflow-hidden rounded-[32px] bg-card ring-1 ring-border sm:rounded-[40px] lg:grid-cols-2"
         >
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-14">
-            <h2 className="text-3xl font-semibold sm:text-4xl">Sobre a {BUSINESS.displayName}</h2>
-            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+            <h2 className="">Sobre a {BUSINESS.displayName}</h2>
+            <p className="mt-4 text-base text-muted-foreground">
               Somos especialistas em higienização de estofados com atendimento a domicílio,
               baseados em Taboão da Serra. Nosso foco é a saúde da sua casa ou empresa.
             </p>

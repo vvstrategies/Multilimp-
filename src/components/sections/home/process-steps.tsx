@@ -30,8 +30,8 @@ export function ProcessSteps() {
     <section className="py-16 sm:py-24">
       <Container>
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Como funciona</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <h2 className="">Como funciona</h2>
+          <p className="mt-4 text-base text-muted-foreground">
             Um processo simples, do primeiro contato ao resultado final.
           </p>
         </Reveal>
@@ -52,7 +52,7 @@ export function ProcessSteps() {
                   className="relative z-[1] mt-5 size-2.5 rounded-full bg-primary ring-4 ring-background"
                 />
                 <span className="mt-2 text-sm font-medium text-muted-foreground">Passo {index + 1}</span>
-                <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+                <h3 className="mt-4">{step.title}</h3>
                 <p className="mt-2 max-w-[26ch] text-sm text-muted-foreground">{step.description}</p>
               </div>
             ))}

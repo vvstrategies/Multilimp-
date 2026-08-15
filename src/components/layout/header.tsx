@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -40,33 +40,99 @@ const SIMPLE_LINKS = [
   { label: "Contato", href: "/contato" },
 ];
 
+/**
+ * Resolves any CSS color string (rgb, oklab, color(), …) to RGBA bytes by
+ * letting the browser paint it. Tailwind v4 emits oklab() from getComputedStyle,
+ * so string parsing alone is not enough.
+ */
+let probeCtx: CanvasRenderingContext2D | null = null;
+function parseColor(color: string): [number, number, number, number] | null {
+  if (!color || color === "transparent") return null;
+  if (!probeCtx) {
+    const canvas = document.createElement("canvas");
+    canvas.width = canvas.height = 1;
+    probeCtx = canvas.getContext("2d", { willReadFrequently: true });
+  }
+  if (!probeCtx) return null;
+  probeCtx.clearRect(0, 0, 1, 1);
+  probeCtx.fillStyle = "#000";
+  probeCtx.fillStyle = color;
+  probeCtx.fillRect(0, 0, 1, 1);
+  const [r, g, b, a] = probeCtx.getImageData(0, 0, 1, 1).data;
+  return [r, g, b, a / 255];
+}
+
+/**
+ * Reads the effective background color painted directly beneath the navbar and
+ * reports whether it is dark. Walking the real element stack (rather than
+ * flipping at a fixed scroll offset) keeps the glass legible over any section,
+ * however tall the hero happens to be on a given page.
+ */
+function surfaceUnderNavIsDark(navBottom: number) {
+  if (typeof document === "undefined") return true;
+  const x = Math.round(window.innerWidth / 2);
+  const y = Math.round(navBottom + 12);
+  if (y >= window.innerHeight) return true;
+
+  let el = document.elementFromPoint(x, y) as HTMLElement | null;
+  while (el) {
+    if (el.closest("header")) {
+      el = el.parentElement;
+      continue;
+    }
+    const rgba = parseColor(getComputedStyle(el).backgroundColor);
+    if (rgba && rgba[3] > 0.5) {
+      // Rec. 601 luma; below ~140 reads as a dark surface.
+      return 0.299 * rgba[0] + 0.587 * rgba[1] + 0.114 * rgba[2] < 140;
+    }
+    el = el.parentElement;
+  }
+  return true;
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [onDark, setOnDark] = useState(true);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 40);
+    let frame = 0;
+    function measure() {
+      frame = 0;
+      const rect = headerRef.current?.getBoundingClientRect();
+      setOnDark(surfaceUnderNavIsDark(rect ? rect.bottom : 96));
     }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    function schedule() {
+      if (frame) return;
+      frame = requestAnimationFrame(measure);
+    }
+    measure();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
   }, []);
 
   const linkClass = cn(
     "transition-colors duration-200",
-    scrolled ? "text-foreground/80 hover:text-foreground" : "text-white/90 hover:text-white"
+    onDark ? "text-white/90 hover:text-white" : "text-foreground/80 hover:text-foreground"
   );
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4 lg:px-[86px] lg:pt-8">
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4 lg:px-8 lg:pt-5"
+    >
       <LiquidGlass
         className={cn(
-          "mx-auto w-full max-w-[1156px] rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_8px_32px_0_rgba(0,0,0,0.12)] transition-colors duration-300",
-          scrolled ? "bg-white/55" : "bg-navy/30"
+          "mx-auto w-full max-w-[1140px] rounded-full shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_8px_32px_0_rgba(0,0,0,0.12)] transition-colors duration-300",
+          onDark ? "bg-navy/30" : "bg-white/55"
         )}
-        contentClassName="flex w-full items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-3.5"
-        overlayClassName={scrolled ? "bg-white/40" : "bg-black/22"}
+        contentClassName="flex w-full items-center justify-between gap-4 px-5 py-2.5 md:px-7 md:py-3"
+        overlayClassName={onDark ? "bg-black/22" : "bg-white/40"}
       >
         <Link href="/" className="flex shrink-0 items-center" aria-label={BUSINESS.displayName}>
           <Image
@@ -75,7 +141,7 @@ export function Header() {
             width={806}
             height={309}
             priority
-            className="h-8 w-auto md:h-11"
+            className="h-10 w-auto md:h-14"
           />
         </Link>
 
@@ -172,7 +238,7 @@ export function Header() {
                 aria-label="Abrir menu"
                 className={cn(
                   "flex size-10 shrink-0 items-center justify-center rounded-full transition-colors lg:hidden",
-                  scrolled ? "text-foreground hover:bg-foreground/10" : "text-white hover:bg-white/10"
+                  onDark ? "text-white hover:bg-white/10" : "text-foreground hover:bg-foreground/10"
                 )}
               />
             }

@@ -25,7 +25,7 @@ export default function PoliticaDePrivacidadePage() {
           <p className="text-sm font-semibold tracking-wide text-primary uppercase">
             Privacidade
           </p>
-          <h1 className="mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl">
             Política de Privacidade
           </h1>
           <p className="mt-4 max-w-2xl text-navy-muted">
@@ -52,7 +52,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">Quais dados coletamos</h2>
+            <h2 className="text-foreground">Quais dados coletamos</h2>
             <p>
               O único ponto do site onde coletamos dados pessoais é o formulário de contato, na
               página <Link href="/contato" className="text-primary hover:underline">Contato</Link>.
@@ -72,7 +72,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">Como o formulário funciona</h2>
+            <h2 className="text-foreground">Como o formulário funciona</h2>
             <p>
               Este site é estático e não possui um servidor próprio armazenando as informações
               enviadas. Ao preencher e enviar o formulário de contato, os dados digitados são
@@ -88,7 +88,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">Para que usamos os dados</h2>
+            <h2 className="text-foreground">Para que usamos os dados</h2>
             <p>
               Usamos as informações enviadas exclusivamente para responder à sua solicitação, tirar
               dúvidas sobre nossos serviços de higienização e impermeabilização de estofados e
@@ -98,7 +98,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">
+            <h2 className="text-foreground">
               Por quanto tempo guardamos os dados
             </h2>
             <p>
@@ -110,7 +110,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">Seus direitos como titular</h2>
+            <h2 className="text-foreground">Seus direitos como titular</h2>
             <p>
               De acordo com a LGPD, você pode solicitar a qualquer momento a confirmação de que
               tratamos seus dados, o acesso a eles, a correção de informações incompletas ou
@@ -125,7 +125,7 @@ export default function PoliticaDePrivacidadePage() {
           </div>
 
           <div className="space-y-3">
-            <h2 className="text-xl font-semibold text-foreground">Alterações nesta política</h2>
+            <h2 className="text-foreground">Alterações nesta política</h2>
             <p>
               Podemos atualizar esta política de tempos em tempos para refletir mudanças em nossos
               processos ou na legislação aplicável. A data no topo desta página indica a versão mais

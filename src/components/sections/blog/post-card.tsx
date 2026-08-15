@@ -26,7 +26,7 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
           </span>
         </div>
 
-        <h2 className="mt-3 text-lg leading-snug font-semibold text-foreground">
+        <h2 className="mt-3 text-foreground">
           <Link href={`/blog/${post.slug}`} className="hover:text-primary">
             {post.title}
           </Link>

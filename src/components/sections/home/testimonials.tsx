@@ -12,8 +12,8 @@ export function Testimonials() {
     <section className="py-16 sm:py-24">
       <Container>
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">O que dizem nossos clientes</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <h2 className="">O que dizem nossos clientes</h2>
+          <p className="mt-4 text-base text-muted-foreground">
             Avaliações reais deixadas por clientes no Google, sem seleção nem edição de conteúdo.
           </p>
         </Reveal>

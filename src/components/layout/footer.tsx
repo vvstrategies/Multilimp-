@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-navy-foreground">Serviços</h3>
+          <h3 className="text-sm text-navy-foreground">Serviços</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-navy-muted">
             {SERVICES_NAV.map((service) => (
               <li key={service.href}>
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-navy-foreground">Áreas Atendidas</h3>
+          <h3 className="text-sm text-navy-foreground">Áreas Atendidas</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-navy-muted">
             {AREAS_NAV.map((area) => (
               <li key={area.href}>
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-navy-foreground">Empresa</h3>
+          <h3 className="text-sm text-navy-foreground">Empresa</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-navy-muted">
             {FOOTER_COMPANY_LINKS.map((link) => (
               <li key={link.href}>

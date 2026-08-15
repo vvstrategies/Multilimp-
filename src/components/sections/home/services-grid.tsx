@@ -17,8 +17,8 @@ export function ServicesGrid() {
     <section className="py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Nossos serviços</h2>
-          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+          <h2 className="">Nossos serviços</h2>
+          <p className="mt-4 text-base text-muted-foreground">
             Higienização especializada para cada tipo de estofado, com atendimento
             residencial e empresarial.
           </p>
@@ -36,7 +36,7 @@ export function ServicesGrid() {
                 <span className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="size-5.5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold">{service.label}</h3>
+                <h3 className="mt-5">{service.label}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted-foreground">
                   {service.description}
                 </p>

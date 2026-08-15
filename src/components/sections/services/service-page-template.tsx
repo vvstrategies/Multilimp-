@@ -101,11 +101,11 @@ export function ServicePageTemplate({
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy text-navy-foreground pt-6 pb-16 sm:pt-8 sm:pb-20">
+      <section className="bg-navy text-navy-foreground pb-16 sm:pb-20">
         <Container>
           <Breadcrumb shortName={service.shortName} />
         </Container>
-        <Container className="mt-6 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Container className="mt-4 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="gap-1.5 border-white/15 bg-navy-card text-navy-muted">
@@ -118,10 +118,10 @@ export function ServicePageTemplate({
               </Badge>
             </div>
 
-            <h1 className="mt-4 text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-4">
               {service.heroHeadline}
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-navy-muted">{service.heroSubheadline}</p>
+            <p className="mt-5 max-w-xl text-base text-navy-muted">{service.heroSubheadline}</p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -159,9 +159,9 @@ export function ServicePageTemplate({
       </section>
 
       {/* Intro */}
-      <section className="pb-16 sm:pb-20">
+      <section className="py-16 sm:py-20">
         <Container>
-          <div className="max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <div className="max-w-3xl space-y-4 text-base leading-relaxed text-muted-foreground">
             {introParagraphs.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
@@ -173,7 +173,7 @@ export function ServicePageTemplate({
       <section className="pb-16 sm:pb-20">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="">
               Problemas que resolvemos
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -184,7 +184,7 @@ export function ServicePageTemplate({
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {service.problems.map((problem) => (
               <Card key={problem.title} className="p-6">
-                <h3 className="font-heading text-lg font-semibold">{problem.title}</h3>
+                <h3 className="font-heading">{problem.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{problem.description}</p>
               </Card>
             ))}
@@ -196,7 +196,7 @@ export function ServicePageTemplate({
       <section className="bg-muted/40 py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="">
               Benefícios do serviço
             </h2>
             <p className="mt-3 text-muted-foreground">
@@ -208,7 +208,7 @@ export function ServicePageTemplate({
               <div key={benefit.title} className="flex gap-3 rounded-2xl bg-background p-6 ring-1 ring-border">
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
                 <div>
-                  <h3 className="font-heading text-base font-semibold">{benefit.title}</h3>
+                  <h3 className="font-heading">{benefit.title}</h3>
                   <p className="mt-1.5 text-sm text-muted-foreground">{benefit.description}</p>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export function ServicePageTemplate({
       <section className="py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Como funciona</h2>
+            <h2 className="">Como funciona</h2>
             <p className="mt-3 text-muted-foreground">
               Do primeiro contato até a peça pronta para uso, veja como é o atendimento.
             </p>
@@ -232,7 +232,7 @@ export function ServicePageTemplate({
                 <span className="flex size-9 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-glow">
                   {step.step}
                 </span>
-                <h3 className="mt-4 font-heading text-base font-semibold">{step.title}</h3>
+                <h3 className="mt-4 font-heading">{step.title}</h3>
                 <p className="mt-1.5 text-sm text-muted-foreground">{step.description}</p>
               </li>
             ))}
@@ -245,7 +245,7 @@ export function ServicePageTemplate({
         <Container>
           <div className="grid gap-10 lg:grid-cols-3">
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="">
                 Onde atuamos
               </h2>
               <p className="mt-3 text-muted-foreground">
@@ -271,7 +271,7 @@ export function ServicePageTemplate({
       <section className="py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="">
               Por que escolher a GS Vitaliza
             </h2>
           </div>
@@ -290,7 +290,7 @@ export function ServicePageTemplate({
       <section className="bg-muted/40 py-16 sm:py-20">
         <Container>
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-center text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-center">
               Perguntas frequentes
             </h2>
             <Accordion className="mt-8 divide-y divide-border rounded-2xl bg-background px-6 ring-1 ring-border">
@@ -311,7 +311,7 @@ export function ServicePageTemplate({
       {relatedServices.length > 0 && (
         <section className="py-16 sm:py-20">
           <Container>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="">
               Serviços relacionados
             </h2>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -323,7 +323,7 @@ export function ServicePageTemplate({
                       <span className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
                         <RelatedIcon className="size-5" aria-hidden="true" />
                       </span>
-                      <h3 className="mt-4 font-heading text-lg font-semibold">
+                      <h3 className="mt-4 font-heading">
                         {related.shortName}
                       </h3>
                       <p className="mt-1.5 text-sm text-muted-foreground">
@@ -363,7 +363,7 @@ export function ServicePageTemplate({
       {/* Final CTA */}
       <section className="bg-navy py-16 text-navy-foreground sm:py-20">
         <Container className="flex flex-col items-center gap-6 text-center">
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="max-w-2xl">
             Pronto para renovar {service.shortName === "Colchões" ? "seu colchão" : "o seu estofado"}?
           </h2>
           <p className="max-w-xl text-navy-muted">

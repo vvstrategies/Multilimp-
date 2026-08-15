@@ -9,8 +9,8 @@ export function ResultsTeaser() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-3xl font-semibold sm:text-4xl">Resultados que você pode ver</h2>
-            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+            <h2 className="">Resultados que você pode ver</h2>
+            <p className="mt-4 text-base text-muted-foreground">
               Manchas antigas, sujeira encravada e odores desaparecem com a nossa
               higienização profissional. Confira exemplos reais de antes e depois.
             </p>

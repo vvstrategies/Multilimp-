@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </ol>
           </nav>
 
-          <h1 className="mt-5 max-w-3xl text-3xl font-semibold sm:text-4xl">{post.title}</h1>
+          <h1 className="mt-5 max-w-3xl">{post.title}</h1>
 
           <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-navy-muted">
             <span className="inline-flex items-center gap-1.5">
@@ -85,13 +85,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <article className="py-16 sm:py-20">
         <Container className="max-w-3xl">
-          <p className="text-lg text-muted-foreground">{post.excerpt}</p>
+          <p className="text-base text-muted-foreground">{post.excerpt}</p>
 
           <div className="mt-8 space-y-10">
             {post.body.map((section, index) => (
               <div key={section.heading ?? index}>
                 {section.heading && (
-                  <h2 className="text-2xl font-semibold text-foreground">{section.heading}</h2>
+                  <h2 className="text-foreground">{section.heading}</h2>
                 )}
                 <div className="mt-3 space-y-4 text-foreground/90">
                   {section.paragraphs.map((paragraph, paragraphIndex) => (
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {relatedServices.length > 0 && (
             <div className="mt-14 rounded-2xl bg-muted p-6 ring-1 ring-border sm:p-8">
-              <h2 className="text-lg font-semibold">Serviços relacionados</h2>
+              <h2 className="">Serviços relacionados</h2>
               <ul className="mt-4 space-y-3">
                 {relatedServices.map((service) => (
                   <li key={service.href}>
@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           )}
 
           <div className="mt-10 flex flex-col items-start gap-4 rounded-3xl bg-navy px-6 py-10 text-navy-foreground sm:px-10">
-            <h2 className="text-2xl font-semibold">Gostou das dicas?</h2>
+            <h2 className="">Gostou das dicas?</h2>
             <p className="max-w-xl text-navy-muted">
               Solicite um orçamento gratuito e conheça a higienização profissional da GS Vitaliza,
               com atendimento a domicílio em Taboão da Serra e região.

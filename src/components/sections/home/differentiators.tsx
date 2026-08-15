@@ -46,8 +46,8 @@ export function Differentiators() {
     <section className="bg-navy py-16 text-navy-foreground sm:py-24">
       <Container>
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">Por que escolher a GS Vitaliza</h2>
-          <p className="mt-4 text-base text-navy-muted sm:text-lg">
+          <h2 className="">Por que escolher a GS Vitaliza</h2>
+          <p className="mt-4 text-base text-navy-muted">
             Cuidado com o seu estofado do início ao fim, com foco em saúde e higiene.
           </p>
         </Reveal>
@@ -73,7 +73,7 @@ export function Differentiators() {
                 strokeWidth={1.25}
                 className="pointer-events-none relative mb-6 size-16 self-center text-white/25 sm:size-20"
               />
-              <h3 className="relative text-xl font-medium text-white">{item.title}</h3>
+              <h3 className="relative text-white">{item.title}</h3>
               <p className="relative mt-3 max-w-[30ch] text-sm leading-relaxed text-white/55">
                 {item.description}
               </p>
