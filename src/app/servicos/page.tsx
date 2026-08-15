@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SERVICES } from "@/data/services";
+import { cn } from "@/lib/utils";
 import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -26,6 +27,8 @@ const SERVICE_ICONS: Record<string, ComponentType<{ className?: string }>> = {
   "tapetes-e-carpetes": Rows3,
   "impermeabilizacao-de-estofados": ShieldCheck,
 };
+
+const FEATURED_SLUG = "sofas-e-estofados";
 
 export const metadata: Metadata = pageMetadata({
   title: "Serviços de Higienização de Estofados em Taboão da Serra",
@@ -124,18 +127,65 @@ export default function ServicosPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => {
               const Icon = SERVICE_ICONS[service.slug] ?? Sparkles;
+              // The flagship service takes the wide slot so the five cards fill
+              // the grid exactly instead of leaving an empty cell.
+              const isFeatured = service.slug === FEATURED_SLUG;
+
               return (
-                <Link key={service.slug} href={`/servicos/${service.slug}`} className="group">
-                  <Card className="h-full p-6 transition-shadow group-hover:shadow-lg">
-                    <span className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <Icon className="size-6" aria-hidden="true" />
+                <Link
+                  key={service.slug}
+                  href={`/servicos/${service.slug}`}
+                  className={cn("group", isFeatured && "sm:col-span-2")}
+                >
+                  <Card
+                    className={cn(
+                      "h-full p-6 transition-shadow group-hover:shadow-lg",
+                      isFeatured && "bg-gradient-to-br from-primary/8 via-card to-card ring-primary/25"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "flex items-center justify-center rounded-full bg-primary/10 text-primary",
+                        isFeatured ? "size-14" : "size-12"
+                      )}
+                    >
+                      <Icon className={isFeatured ? "size-7" : "size-6"} aria-hidden="true" />
                     </span>
-                    <h2 className="mt-4 font-heading">
+
+                    {isFeatured && (
+                      <span className="mt-4 w-fit rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
+                        Serviço mais procurado
+                      </span>
+                    )}
+
+                    {/* Kept as h2 for document outline (this grid follows the
+                        page h1 directly), but sized as a card title so it does
+                        not compete with real section headings. */}
+                    <h2
+                      className={cn(
+                        "font-heading text-[17px] leading-[1.35] sm:text-[19px]",
+                        isFeatured ? "mt-3" : "mt-4"
+                      )}
+                    >
                       {service.shortName}
                     </h2>
                     <p className="mt-2 text-sm text-muted-foreground">
                       {service.heroSubheadline}
                     </p>
+
+                    {isFeatured && (
+                      <ul className="mt-4 flex flex-wrap gap-2">
+                        {service.environments.slice(0, 5).map((item) => (
+                          <li
+                            key={item}
+                            className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
                       Saiba mais
                       <ChevronRight className="size-4" aria-hidden="true" />
