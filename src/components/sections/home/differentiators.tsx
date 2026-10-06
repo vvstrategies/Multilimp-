@@ -1,7 +1,6 @@
-import { Building2, Droplets, Home, ShieldCheck, Sparkles, Star, type LucideIcon } from "lucide-react";
+import { Building2, CalendarDays, Droplets, Home, ShieldCheck, Sparkles, type LucideIcon } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
-import { BUSINESS } from "@/lib/constants";
 
 const ITEMS: { icon: LucideIcon; title: string; description: string }[] = [
   {
@@ -14,13 +13,13 @@ const ITEMS: { icon: LucideIcon; title: string; description: string }[] = [
     icon: Droplets,
     title: "Produtos profissionais",
     description:
-      "Usamos produtos que fazem uma limpeza profunda sem danificar ou desgastar as fibras do tecido.",
+      "A técnica e os produtos são definidos de acordo com o tipo de peça e o material, após avaliação.",
   },
   {
     icon: ShieldCheck,
-    title: "Eliminação completa",
+    title: "Cuidado com cada peça",
     description:
-      "Removemos ácaros, bactérias, fungos e odores encravados nas fibras, não apenas a sujeira visível.",
+      "Cada atendimento começa com a identificação do item e das necessidades relatadas pelo cliente.",
   },
   {
     icon: Sparkles,
@@ -35,9 +34,9 @@ const ITEMS: { icon: LucideIcon; title: string; description: string }[] = [
       "Atendemos tanto residências quanto empresas que precisam manter estofados limpos e higienizados.",
   },
   {
-    icon: Star,
-    title: `Nota ${BUSINESS.rating.value.toFixed(1)} no Google`,
-    description: `Avaliação de ${BUSINESS.rating.value.toFixed(1)} estrelas com ${BUSINESS.rating.count} avaliações de clientes reais.`,
+    icon: CalendarDays,
+    title: "Mais de 3 anos no mercado",
+    description: "Experiência em higienização e impermeabilização de diferentes tipos de estofados.",
   },
 ];
 
@@ -46,9 +45,9 @@ export function Differentiators() {
     <section id="diferenciais" className="bg-navy py-16 text-navy-foreground sm:py-20">
       <Container>
         <Reveal as="div" className="mx-auto max-w-2xl text-center">
-          <h2 className="">Por que escolher a GS Vitaliza</h2>
+          <h2 className="">Por que escolher a Multilimp Higienização</h2>
           <p className="mt-4 text-base text-navy-muted">
-            Cuidado com o seu estofado do início ao fim, com foco em saúde e higiene.
+            Atendimento na região, avaliação de cada peça e serviços especializados em estofados.
           </p>
         </Reveal>
 

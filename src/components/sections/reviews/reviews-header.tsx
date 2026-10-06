@@ -22,7 +22,7 @@ export function ReviewsHeader({ className }: { className?: string }) {
           </div>
         </div>
         <Button variant="outline" size="sm" render={<a href={BUSINESS.googleReviewsUrl} target="_blank" rel="noopener noreferrer" />}>
-          Escrever avaliação
+          Ver perfil no Google
         </Button>
       </div>
     </div>

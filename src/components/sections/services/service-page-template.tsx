@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   BedDouble,
   CarFront,
@@ -96,7 +97,7 @@ export function ServicePageTemplate({
   const relatedServices = service.relatedServiceSlugs
     .map((slug) => allServices.find((s) => s.slug === slug))
     .filter((s): s is ServiceDefinition => Boolean(s));
-  const heroMessage = `Olá! Vim pelo site da GS Vitaliza e gostaria de solicitar um orçamento para ${service.name.toLowerCase()}.`;
+  const heroMessage = `Olá! Vim pelo site da Multilimp Higienização e gostaria de solicitar um orçamento para ${service.name.toLowerCase()}.`;
 
   return (
     <>
@@ -135,7 +136,7 @@ export function ServicePageTemplate({
                   />
                 }
               >
-                Solicitar orçamento gratuito
+                Solicitar orçamento
               </Button>
               <Button variant="cta-outline" size="xl" render={<Link href="/servicos" />}>
                 Ver todos os serviços
@@ -145,10 +146,12 @@ export function ServicePageTemplate({
 
           <div>
             {service.heroImage ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={service.heroImage}
                 alt={service.heroHeadline}
+                width={1200}
+                height={900}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-white/10"
               />
             ) : (
@@ -200,7 +203,7 @@ export function ServicePageTemplate({
               Benefícios do serviço
             </h2>
             <p className="mt-3 text-muted-foreground">
-              O que você pode esperar de uma higienização profissional feita pela GS Vitaliza.
+              O que você pode esperar de uma higienização profissional feita pela Multilimp Higienização.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -272,7 +275,7 @@ export function ServicePageTemplate({
         <Container>
           <div className="max-w-2xl">
             <h2 className="">
-              Por que escolher a GS Vitaliza
+              Por que escolher a Multilimp Higienização
             </h2>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -349,8 +352,8 @@ export function ServicePageTemplate({
             <div className="flex items-start gap-3">
               <Droplets className="mt-0.5 size-6 shrink-0 text-primary" aria-hidden="true" />
               <p className="text-sm text-foreground sm:text-base">
-                Atendemos {service.shortName.toLowerCase()} em Taboão da Serra, Osasco, Santo
-                Amaro, Embu das Artes, Itapevi e Cotia.
+                Atendemos {service.shortName.toLowerCase()} em Americana, Santa Bárbara d’Oeste,
+                Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.
               </p>
             </div>
             <Button variant="outline" size="lg" render={<Link href="/areas-atendidas" />}>
@@ -367,7 +370,7 @@ export function ServicePageTemplate({
             Pronto para renovar {service.shortName === "Colchões" ? "seu colchão" : "o seu estofado"}?
           </h2>
           <p className="max-w-xl text-navy-muted">
-            Solicite um orçamento gratuito pelo WhatsApp e agende o atendimento no dia e horário
+            Solicite um orçamento pelo WhatsApp e agende o atendimento no dia e horário
             que forem melhores para você.
           </p>
           <Button

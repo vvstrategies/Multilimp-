@@ -6,7 +6,7 @@ import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Política de Privacidade",
   description:
-    "Saiba como a GS Vitaliza coleta, usa e protege as informações enviadas pelo formulário de contato do site.",
+    "Saiba como a Multilimp Higienização coleta, usa e protege as informações enviadas pelo formulário de contato do site.",
   path: "/politica-de-privacidade",
 });
 

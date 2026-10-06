@@ -7,6 +7,20 @@ const nextConfig: NextConfig = {
     // the subject stays sharp on high-DPI screens.
     qualities: [75, 92],
   },
+  async redirects() {
+    return [
+      "taboao-da-serra",
+      "osasco",
+      "santo-amaro",
+      "embu-das-artes",
+      "itapevi",
+      "cotia",
+    ].map((slug) => ({
+      source: `/areas-atendidas/${slug}`,
+      destination: "/areas-atendidas",
+      permanent: true,
+    }));
+  },
 };
 
 export default nextConfig;

@@ -147,15 +147,18 @@ export function Header() {
         contentClassName="flex w-full items-center justify-between gap-4 px-5 py-2.5 md:px-7 md:py-3"
         overlayClassName={onDark ? "bg-black/22" : "bg-white/40"}
       >
-        <Link href="/" className="flex shrink-0 items-center" aria-label={BUSINESS.displayName}>
+        <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label={BUSINESS.displayName}>
           <Image
-            src="/images/logo-gs.png"
-            alt={BUSINESS.displayName}
-            width={806}
-            height={309}
+            src="/images/multilimp/logo.webp"
+            alt=""
+            width={315}
+            height={255}
             priority
-            className="h-10 w-auto md:h-14"
+            className="size-11 rounded-full object-cover md:size-14"
           />
+          <span className={cn("max-w-28 text-left text-xs leading-tight font-semibold sm:max-w-none sm:text-sm", onDark ? "text-white" : "text-foreground")}>
+            Multilimp Higienização
+          </span>
         </Link>
 
         <nav className="hidden lg:block" aria-label="Navegação principal">

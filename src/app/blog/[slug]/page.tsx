@@ -132,8 +132,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="mt-10 flex flex-col items-start gap-4 rounded-3xl bg-navy px-6 py-10 text-navy-foreground sm:px-10">
             <h2 className="">Gostou das dicas?</h2>
             <p className="max-w-xl text-navy-muted">
-              Solicite um orçamento gratuito e conheça a higienização profissional da GS Vitaliza,
-              com atendimento a domicílio em Taboão da Serra e região.
+              Solicite um orçamento e conheça a higienização profissional da Multilimp Higienização,
+              com atendimento a domicílio em Americana e região.
             </p>
             <Button
               variant="cta-white"

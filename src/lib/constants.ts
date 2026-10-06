@@ -1,47 +1,46 @@
 export const SITE_URL = "https://gsvitaliza.com.br";
-export const SITE_NAME = "GS Vitaliza";
+export const SITE_NAME = "Multilimp Higienização";
 
-// NAP (Name / Address / Phone) — sourced from the GS Vitaliza Google Business
-// Profile. Keep this file as the single source of truth so every page and
-// schema block stays consistent.
+// Keep business identity and contact details in one place for consistent
+// rendering and structured data.
 export const BUSINESS = {
-  legalName: "GS Vitaliza Estofados",
-  displayName: "GS Vitaliza",
-  tagline: "Higienização e Conservação de Estofados",
-  phoneDisplay: "(11) 97575-1247",
-  phoneE164: "+5511975751247",
-  whatsappNumber: "5511975751247",
-  email: null as string | null,
+  legalName: "Multilimp Higienização",
+  displayName: "Multilimp Higienização",
+  tagline: "Higienização e Impermeabilização de Estofados",
+  phoneDisplay: "(19) 98152-7537",
+  phoneE164: "+5519981527537",
+  whatsappNumber: "5519981527537",
+  email: "multlimphigienizacaodesofa@gmail.com",
   address: {
-    street: "R. Senegal, 29a",
-    neighborhood: "Parque Monte Alegre",
-    city: "Taboão da Serra",
+    street: "R. Ataúlfo Alves, 451",
+    neighborhood: "Residencial Jaguari",
+    city: "Americana",
     state: "SP",
     stateFull: "São Paulo",
-    postalCode: "06756-420",
+    postalCode: "13473-676",
     country: "BR",
   },
-  // Exact GeoCoordinates not confirmed yet — omitted from schema rather
-  // than guessed. Add once the client confirms via Google Business Profile.
   geo: null as { latitude: number; longitude: number } | null,
-  hours: [
-    { day: "Segunda", open: "09:00", close: "18:00" },
-    { day: "Terça", open: "09:00", close: "18:00" },
-    { day: "Quarta", open: "09:00", close: "18:00" },
-    { day: "Quinta", open: "09:00", close: "18:00" },
-    { day: "Sexta", open: "09:00", close: "18:00" },
-    { day: "Sábado", open: "09:00", close: "13:00" },
-  ],
-  hoursNote:
-    "Horário confirmado com a Google Business Profile apenas para segunda-feira (abre às 9h). Demais dias exibidos são provisórios até confirmação do cliente.",
+  hours: [],
   rating: {
     value: 5.0,
-    count: 49,
+    count: 19,
   },
-  instagram: "https://www.instagram.com/gsvitaliza",
-  googleReviewsUrl:
-    "https://www.google.com/maps/place/GS+Vitaliza+Estofados/data=!4m2!3m1!1s0x0:0xbeb3132eccd2abbb",
+  instagram: "https://www.instagram.com/multlimp.higienizacao_/",
+  facebook:
+    "https://www.facebook.com/people/MultLimp-Higieniza%C3%A7%C3%B5es-de-Estofados-e-Tapetes/61558442032455/",
+  googleReviewsUrl: "https://share.google/6IWGomAce6JDjRsrv",
 } as const;
+
+export const SERVICE_AREA_NAMES = [
+  "Americana",
+  "Santa Bárbara d’Oeste",
+  "Nova Odessa",
+  "Sumaré",
+  "Hortolândia",
+  "Limeira",
+  "Paulínia",
+];
 
 export function whatsappHref(message: string, source?: string) {
   const params = new URLSearchParams({ text: message });
@@ -50,7 +49,7 @@ export function whatsappHref(message: string, source?: string) {
 }
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Olá! Vim pelo site da GS Vitaliza e gostaria de solicitar um orçamento.";
+  "Olá! Vim pelo site da Multilimp Higienização e gostaria de solicitar um orçamento.";
 
 export type NavLink = {
   label: string;
@@ -84,15 +83,21 @@ export const SERVICES_NAV: { label: string; href: string; description: string }[
     href: "/servicos/impermeabilizacao-de-estofados",
     description: "Proteção contra líquidos, manchas e desgaste do dia a dia",
   },
+  {
+    label: "Persianas",
+    href: "/servicos/persianas",
+    description: "Higienização cuidadosa de persianas sob avaliação",
+  },
 ];
 
 export const AREAS_NAV: { label: string; href: string }[] = [
-  { label: "Taboão da Serra", href: "/areas-atendidas/taboao-da-serra" },
-  { label: "Osasco", href: "/areas-atendidas/osasco" },
-  { label: "Santo Amaro", href: "/areas-atendidas/santo-amaro" },
-  { label: "Embu das Artes", href: "/areas-atendidas/embu-das-artes" },
-  { label: "Itapevi", href: "/areas-atendidas/itapevi" },
-  { label: "Cotia", href: "/areas-atendidas/cotia" },
+  { label: "Americana", href: "/areas-atendidas/americana" },
+  { label: "Santa Bárbara d’Oeste", href: "/areas-atendidas/santa-barbara-doeste" },
+  { label: "Nova Odessa", href: "/areas-atendidas/nova-odessa" },
+  { label: "Sumaré", href: "/areas-atendidas/sumare" },
+  { label: "Hortolândia", href: "/areas-atendidas/hortolandia" },
+  { label: "Limeira", href: "/areas-atendidas/limeira" },
+  { label: "Paulínia", href: "/areas-atendidas/paulinia" },
 ];
 
 export const MAIN_NAV: NavLink[] = [
@@ -108,7 +113,7 @@ export const MAIN_NAV: NavLink[] = [
     href: "/areas-atendidas",
     children: AREAS_NAV.map((a) => ({ label: a.label, href: a.href })),
   },
-  { label: "Antes e Depois", href: "/antes-e-depois" },
+  { label: "Galeria de trabalhos", href: "/antes-e-depois" },
   { label: "Avaliações", href: "/avaliacoes" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/perguntas-frequentes" },
@@ -116,8 +121,8 @@ export const MAIN_NAV: NavLink[] = [
 ];
 
 export const FOOTER_COMPANY_LINKS = [
-  { label: "Sobre a GS Vitaliza", href: "/sobre" },
-  { label: "Antes e Depois", href: "/antes-e-depois" },
+  { label: "Sobre a Multilimp", href: "/sobre" },
+  { label: "Galeria de trabalhos", href: "/antes-e-depois" },
   { label: "Avaliações", href: "/avaliacoes" },
   { label: "Blog", href: "/blog" },
   { label: "Perguntas Frequentes", href: "/perguntas-frequentes" },

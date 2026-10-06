@@ -18,13 +18,13 @@ export function Hero() {
 
           <h1 className="mt-4">
             Higienização profissional de estofados, direto na sua casa em{" "}
-            <span className="hero-underline text-primary">Taboão da Serra</span>
+            <span className="hero-underline text-primary">Americana e região</span>
           </h1>
 
           <p className="mt-4 max-w-xl text-base leading-relaxed text-navy-muted">
-            Removemos sujeira encravada, ácaros, bactérias, fungos e odores de sofás,
-            colchões, bancos automotivos e tapetes, com produtos profissionais que
-            preservam o tecido. Levamos toda a estrutura até você.
+            Há mais de três anos no mercado, somos especializados em higienização e
+            impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes, poltronas e bancos
+            automotivos.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
@@ -39,7 +39,7 @@ export function Hero() {
                 />
               }
             >
-              Solicitar orçamento gratuito
+              Solicitar orçamento
             </Button>
           </div>
 
@@ -50,7 +50,7 @@ export function Hero() {
             </span>
             <span className="flex items-center gap-1.5">
               <MapPin className="size-4 text-primary" aria-hidden="true" />
-              Taboão da Serra e região
+              Americana e cidades atendidas
             </span>
           </div>
         </div>
@@ -58,13 +58,13 @@ export function Hero() {
         <div className="order-1 relative lg:order-2">
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-navy-card ring-1 ring-white/10">
             <Image
-              src="/images/tecnico-gs-vitaliza.webp"
-              alt="Técnico da GS Vitaliza com equipamento profissional de higienização de estofados"
+              src="/images/multilimp/hero-sofa.webp"
+              alt="Sofá em uma área de atendimento da Multilimp Higienização"
               fill
               priority
               quality={92}
               sizes="(max-width: 1024px) 100vw, 500px"
-              className="object-cover object-[50%_28%]"
+              className="object-cover"
             />
             <div
               aria-hidden="true"

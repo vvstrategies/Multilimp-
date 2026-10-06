@@ -10,8 +10,8 @@ export function AboutHero() {
         </h1>
         <p className="mt-5 max-w-2xl text-base text-navy-muted">
           A {BUSINESS.displayName} é especializada em higienização de sofás, colchões, bancos
-          automotivos, tapetes e impermeabilização de estofados, atendendo residências e
-          empresas em Taboão da Serra e região.
+          automotivos, tapetes, persianas, cadeiras e carpetes, além da impermeabilização de
+          estofados. Há mais de três anos, atende residências e empresas em Americana e região.
         </p>
       </Container>
     </section>

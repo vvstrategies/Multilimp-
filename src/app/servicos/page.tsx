@@ -31,9 +31,9 @@ const SERVICE_ICONS: Record<string, ComponentType<{ className?: string }>> = {
 const FEATURED_SLUG = "sofas-e-estofados";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Serviços de Higienização de Estofados em Taboão da Serra",
+  title: "Serviços de Higienização em Americana e Região",
   description:
-    "Higienização de sofás, colchões, bancos automotivos, tapetes e carpetes, além de impermeabilização de estofados. Atendimento a domicílio em Taboão da Serra, Osasco, Santo Amaro e região.",
+    "Higienização e impermeabilização de sofás, colchões, bancos automotivos, tapetes, carpetes e persianas em Americana e nas cidades da região.",
   path: "/servicos",
 });
 
@@ -97,10 +97,10 @@ export default function ServicosPage() {
               Serviços de Higienização de Estofados
             </h1>
             <p className="mt-5 text-base text-navy-muted">
-              A GS Vitaliza higieniza sofás, colchões, bancos automotivos, tapetes e carpetes, e
-              também aplica impermeabilização de estofados. Todo o atendimento é feito a
-              domicílio, em residências e empresas, com produtos profissionais que não danificam
-              o tecido, em Taboão da Serra, Osasco, Santo Amaro e região.
+              A Multilimp Higienização atende residências e empresas com higienização e
+              impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes, poltronas e
+              bancos automotivos. Consulte a disponibilidade para Americana e as demais cidades
+              atendidas.
             </p>
             <div className="mt-8">
               <Button
@@ -114,7 +114,7 @@ export default function ServicosPage() {
                   />
                 }
               >
-                Solicitar orçamento gratuito
+                Solicitar orçamento
               </Button>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function ServicosPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((service) => {
               const Icon = SERVICE_ICONS[service.slug] ?? Sparkles;
-              // The flagship service takes the wide slot so the five cards fill
+              // The featured service takes the wide slot so the cards fill
               // the grid exactly instead of leaving an empty cell.
               const isFeatured = service.slug === FEATURED_SLUG;
 
@@ -228,7 +228,7 @@ export default function ServicosPage() {
             Vamos cuidar do seu estofado?
           </h2>
           <p className="max-w-xl text-navy-muted">
-            Fale com a gente pelo WhatsApp, conte o que precisa e receba um orçamento gratuito
+            Fale com a gente pelo WhatsApp, conte o que precisa e receba um orçamento
             para o serviço mais adequado.
           </p>
           <Button

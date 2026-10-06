@@ -1,9 +1,11 @@
-# GS Vitaliza
+# Multilimp Higienização
 
-Site institucional da GS Vitaliza, especializada em higienizacao de estofados com atendimento em Taboao da Serra e regiao.
+Site institucional da Multilimp Higienização, empresa localizada em Americana e especializada em higienização e impermeabilização de estofados.
 
-- Site: https://gsvitaliza.com.br
+- Site atualmente configurado: https://gsvitaliza.com.br
 - Repositorio: https://github.com/vvstrategies/Multilimp-
+
+O domínio acima foi mantido porque não foi informado um novo domínio para a marca. Antes de trocar o domínio público, atualize `SITE_URL` em `src/lib/constants.ts` e o campo `homepage` deste arquivo e de `package.json`.
 
 ## Stack
 
@@ -44,11 +46,15 @@ O site fica disponivel em http://localhost:3000. Para desenvolvimento com hot re
 
 - `src/app/` — paginas e rotas do site
 - `src/components/` — componentes de layout e secoes
-- `src/data/` — conteudo de servicos, localidades, avaliacoes, FAQ e blog
+- `src/data/` — conteudo de servicos, localidades, FAQ e blog
 - `src/lib/constants.ts` — dados centrais da empresa, contato, navegacao e URL publica
-- `public/` — imagens e outros arquivos publicos
+- `public/images/multilimp/` — logo e fotos otimizadas da empresa
+- `public/videos/` — vídeos de atendimento
+- `src/app/icon.png` — ícone da marca
 
-Ao atualizar informacoes comerciais, mantenha telefone, endereco, horarios e links consistentes em `src/lib/constants.ts` e nos dados de conteudo correspondentes.
+O site mantém as páginas por serviço e por cidade atendida. As avaliações são consultadas no perfil público do Google para evitar exibir comentários desatualizados.
+
+Ao atualizar informações comerciais, mantenha telefone, endereço, redes sociais, perfil do Google e cidades em `src/lib/constants.ts` e nos dados de conteúdo correspondentes.
 
 ## Deploy
 

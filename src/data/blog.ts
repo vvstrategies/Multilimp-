@@ -51,7 +51,7 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "A higienização profissional de colchões trabalha justamente onde a limpeza caseira não alcança. Com equipamentos e produtos adequados ao tipo de tecido e espuma, é possível extrair sujidade, resíduos orgânicos e ácaros de dentro das camadas do colchão, não apenas da superfície.",
           "Além de contribuir para a redução de sintomas alérgicos, esse processo também prolonga a vida útil do colchão e ajuda a manter o ambiente do quarto mais saudável, especialmente em casas com crianças, pets ou pessoas com sensibilidade respiratória.",
-          "Se você notou algum dos sinais descritos acima ou simplesmente não lembra a última vez que o colchão passou por uma limpeza profunda, vale considerar uma avaliação. A GS Vitaliza atende a domicílio em Taboão da Serra e região e usa produtos profissionais que não danificam o tecido do colchão. Solicite um orçamento gratuito pelo WhatsApp para tirar suas dúvidas.",
+          "Se você notou algum dos sinais descritos acima ou simplesmente não lembra a última vez que o colchão passou por uma limpeza profunda, vale considerar uma avaliação. A Multilimp Higienização atende a domicílio em Americana e região e usa orientação adequada para cada tipo de material do colchão. Solicite um orçamento pelo WhatsApp para tirar suas dúvidas.",
         ],
       },
     ],
@@ -103,7 +103,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Quando vale a pena chamar um profissional",
         paragraphs: [
           "Manter o sofá aspirado e livre de sujeira visível ajuda, mas não substitui uma higienização periódica que trabalhe as camadas internas do estofado. A frequência ideal varia de acordo com o uso, a presença de pets e crianças e o tipo de tecido, então vale conversar com um profissional para entender o que faz sentido para o seu caso.",
-          "A GS Vitaliza faz higienização de sofás e estofados a domicílio em Taboão da Serra, Osasco, Santo Amaro, Embu das Artes, Itapevi, Cotia e região, com produtos profissionais que não danificam o tecido. Fale pelo WhatsApp e solicite um orçamento gratuito.",
+          "A Multilimp Higienização faz higienização de sofás e estofados a domicílio em Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia, com orientação adequada para cada tipo de material. Fale pelo WhatsApp e solicite um orçamento.",
         ],
       },
     ],
@@ -153,7 +153,7 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "Depois da impermeabilização, pequenos cuidados ajudam a manter o efeito por mais tempo: limpar respingos assim que acontecem, evitar produtos de limpeza muito agressivos sobre o tecido e passar um aspirador com regularidade para remover poeira antes que ela se acumule.",
           "A frequência ideal para reaplicar a impermeabilização varia conforme o uso do veículo, por isso o recomendado é avaliar o estado do estofado periodicamente com um profissional.",
-          "A GS Vitaliza faz higienização e impermeabilização de bancos automotivos a domicílio em Taboão da Serra e região, com produtos profissionais que não danificam o tecido. Solicite um orçamento gratuito pelo WhatsApp e tire suas dúvidas sobre o processo.",
+          "A Multilimp Higienização faz higienização e impermeabilização de bancos automotivos a domicílio em Americana e região, com orientação adequada para cada tipo de material. Solicite um orçamento pelo WhatsApp e tire suas dúvidas sobre o processo.",
         ],
       },
     ],

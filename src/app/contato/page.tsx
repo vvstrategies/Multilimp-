@@ -1,13 +1,13 @@
-import { Clock, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { ContactForm } from "@/components/sections/contact/contact-form";
-import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
+import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, SERVICE_AREA_NAMES, whatsappHref } from "@/lib/constants";
 import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Contato",
   description:
-    "Fale com a GS Vitaliza pelo WhatsApp, confira endereço, horário de atendimento e solicite um orçamento gratuito para higienização de estofados.",
+    "Entre em contato com a Multilimp Higienização pelo WhatsApp, telefone ou e-mail e consulte disponibilidade para atendimento.",
   path: "/contato",
 });
 
@@ -34,7 +34,7 @@ export default function ContatoPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-navy-muted">
             Responda algumas informações rápidas ou fale direto com a nossa equipe pelo WhatsApp.
-            Atendemos Taboão da Serra, Osasco, Santo Amaro, Embu das Artes, Itapevi, Cotia e região.
+            Atendemos {SERVICE_AREA_NAMES.join(", ").replace(/, ([^,]*)$/, " e $1")}.
           </p>
         </Container>
       </section>
@@ -77,6 +77,20 @@ export default function ContatoPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Mail className="size-4.5" aria-hidden="true" />
+                    </span>
+                    <span>
+                      <span className="block font-medium text-foreground">E-mail</span>
+                      <a
+                        href={`mailto:${BUSINESS.email}`}
+                        className="break-all text-muted-foreground hover:text-primary"
+                      >
+                        {BUSINESS.email}
+                      </a>
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <Phone className="size-4.5" aria-hidden="true" />
                     </span>
                     <span>
@@ -100,21 +114,6 @@ export default function ContatoPage() {
                         <br />
                         {BUSINESS.address.city} - {BUSINESS.address.state}, {BUSINESS.address.postalCode}
                       </span>
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <Clock className="size-4.5" aria-hidden="true" />
-                    </span>
-                    <span>
-                      <span className="block font-medium text-foreground">Horário de atendimento</span>
-                      <ul className="mt-1 space-y-0.5 text-muted-foreground">
-                        {BUSINESS.hours.map((item) => (
-                          <li key={item.day}>
-                            {item.day}: {item.open} às {item.close}
-                          </li>
-                        ))}
-                      </ul>
                     </span>
                   </li>
                 </ul>

@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Blog | Dicas de Higienização de Estofados",
   description:
-    "Artigos com dicas práticas sobre higienização e conservação de sofás, colchões, bancos automotivos e tapetes, direto da equipe da GS Vitaliza.",
+    "Dicas práticas da Multilimp Higienização sobre cuidados com sofás, colchões, tapetes, persianas e outros estofados.",
   path: "/blog",
 });
 
@@ -48,8 +48,8 @@ export default function BlogPage() {
           <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-muted px-6 py-10 text-center ring-1 ring-border sm:px-10">
             <h2 className="">Precisa de uma higienização profissional?</h2>
             <p className="max-w-xl text-muted-foreground">
-              Atendemos a domicílio em Taboão da Serra, Osasco, Santo Amaro, Embu das Artes, Itapevi,
-              Cotia e região. Solicite um orçamento gratuito e sem compromisso.
+              Atendemos Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia,
+              Limeira e Paulínia. Consulte a disponibilidade e solicite um orçamento pelo WhatsApp.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <Button

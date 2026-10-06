@@ -16,7 +16,7 @@ export default function OpengraphImage() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "80px",
-          background: "linear-gradient(135deg, #0B1220 0%, #0B1A2E 60%, #10254A 100%)",
+          background: "linear-gradient(135deg, #071624 0%, #0B2340 60%, #123B61 100%)",
           color: "#FFFFFF",
           fontFamily: "sans-serif",
         }}
@@ -36,8 +36,8 @@ export default function OpengraphImage() {
               width: 64,
               height: 64,
               borderRadius: "9999px",
-              background: "#1E6AFF",
-              boxShadow: "0 4px 30px rgba(30,106,255,0.5)",
+              background: "#0877C9",
+              boxShadow: "0 4px 30px rgba(8,119,201,0.5)",
             }}
           />
           {BUSINESS.displayName}
@@ -45,8 +45,8 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", fontSize: 56, fontWeight: 700, marginTop: 32, maxWidth: 900 }}>
           Higienização Profissional de Estofados
         </div>
-        <div style={{ display: "flex", fontSize: 30, marginTop: 20, color: "rgba(255,255,255,0.75)" }}>
-          Taboão da Serra, Osasco, Santo Amaro e região
+        <div style={{ display: "flex", fontSize: 30, marginTop: 20, maxWidth: 1000, color: "rgba(255,255,255,0.75)" }}>
+          Americana e cidades da região
         </div>
       </div>
     ),

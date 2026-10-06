@@ -1,4 +1,5 @@
 import { JsonLd, faqJsonLd, localBusinessJsonLd, pageMetadata } from "@/lib/seo";
+import { SERVICE_AREA_NAMES } from "@/lib/constants";
 import { Hero } from "@/components/sections/home/hero";
 import { ServicesGrid } from "@/components/sections/home/services-grid";
 import { Differentiators } from "@/components/sections/home/differentiators";
@@ -12,25 +13,16 @@ import { CtaBanner } from "@/components/sections/home/cta-banner";
 import { SectionDivider } from "@/components/layout/section-divider";
 
 export const metadata = pageMetadata({
-  title: "GS Vitaliza | Higienização de Estofados em Taboão da Serra",
+  title: "Multilimp Higienização | Americana e região",
   description:
-    "Higienização profissional de sofás, colchões, bancos automotivos, tapetes e impermeabilização de estofados, com atendimento a domicílio em Taboão da Serra, Osasco, Santo Amaro e região. Nota 5,0 no Google.",
+    "Higienização e impermeabilização de estofados, tapetes, persianas e carpetes em Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.",
   path: "/",
 });
 
 export default function Home() {
   return (
     <>
-      <JsonLd
-        data={localBusinessJsonLd([
-          "Taboão da Serra",
-          "Osasco",
-          "Santo Amaro",
-          "Embu das Artes",
-          "Itapevi",
-          "Cotia",
-        ])}
-      />
+      <JsonLd data={localBusinessJsonLd(SERVICE_AREA_NAMES)} />
       <JsonLd data={faqJsonLd(FAQ_PREVIEW_ITEMS)} />
 
       <Hero />
@@ -45,7 +37,7 @@ export default function Home() {
       <FaqPreview />
       <CtaBanner
         title="Pronto para renovar seus estofados?"
-        description="Solicite um orçamento gratuito e agende o atendimento a domicílio em Taboão da Serra e região."
+        description="Solicite um orçamento e consulte a disponibilidade para atendimento em Americana e nas cidades da região."
         source="home_final_cta"
       />
     </>

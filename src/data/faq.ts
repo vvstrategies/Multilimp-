@@ -1,3 +1,5 @@
+import { BUSINESS, SERVICE_AREA_NAMES } from "@/lib/constants";
+
 export type FaqItem = {
   category: string;
   question: string;
@@ -10,19 +12,19 @@ export const GENERAL_FAQS: FaqItem[] = [
     category: "Sobre o serviço",
     question: "O que é a higienização de estofados e por que ela é necessária?",
     answer:
-      "É a limpeza profunda de sofás, colchões, bancos automotivos, tapetes e carpetes com produtos e equipamentos profissionais, que alcançam as camadas internas do tecido e não apenas a superfície. Ela ajuda a eliminar ácaros, bactérias, fungos, odores e manchas que a limpeza caseira normalmente não remove, contribuindo para um ambiente mais saudável em casa ou no trabalho.",
+      "É um serviço de limpeza de peças estofadas realizado com técnicas escolhidas conforme o tipo de material e as condições da peça. A equipe avalia o item e orienta sobre o serviço indicado para o caso.",
   },
   {
     category: "Sobre o serviço",
-    question: "Quais tipos de estofado a GS Vitaliza higieniza?",
+    question: "Quais tipos de estofado a Multilimp Higienização atende?",
     answer:
-      "Fazemos higienização de sofás e poltronas, colchões, bancos automotivos (tecido e couro), tapetes e carpetes, além de impermeabilização de estofados em geral. Se você tem um caso específico, envie uma foto pelo WhatsApp para avaliarmos.",
+      "A Multilimp trabalha com higienização e impermeabilização de sofás, tapetes, persianas, cadeiras estofadas, carpetes, poltronas e bancos automotivos. Consulte a equipe sobre o seu item.",
   },
   {
     category: "Sobre o serviço",
     question: "A higienização remove todas as manchas do estofado?",
     answer:
-      "A maioria das manchas melhora bastante ou desaparece completamente com a limpeza profissional, mas o resultado depende do tipo de mancha, do tecido e de quanto tempo ela já está fixada. Manchas muito antigas ou de determinados produtos podem clarear sem sumir totalmente. Para um diagnóstico mais preciso, o ideal é enviar fotos do estofado pelo WhatsApp antes do atendimento.",
+      "Não é possível garantir a remoção completa de todas as manchas. O resultado depende do tipo de mancha, do material e do estado da peça. Envie fotos pelo WhatsApp para a equipe avaliar e explicar o que esperar antes de agendar.",
   },
   {
     category: "Sobre o serviço",
@@ -35,19 +37,19 @@ export const GENERAL_FAQS: FaqItem[] = [
     category: "Agendamento e atendimento",
     question: "Como faço para agendar um atendimento?",
     answer:
-      "A forma mais rápida é chamar no WhatsApp pelo número (11) 97575-1247. Conte o tipo de estofado, a quantidade de peças e, se possível, envie fotos para agilizarmos o orçamento e combinarmos um horário.",
+      `A forma mais rápida é chamar no WhatsApp pelo número ${BUSINESS.phoneDisplay}. Conte o tipo de peça e a quantidade; se possível, envie fotos para ajudar a equipe a preparar o orçamento.`,
   },
   {
     category: "Agendamento e atendimento",
     question: "O atendimento é feito na minha casa ou empresa?",
     answer:
-      "Sim, o atendimento é feito a domicílio, tanto em residências quanto em empresas. Nossa equipe leva os equipamentos e produtos necessários até o local combinado.",
+      "A Multilimp atende residências e empresas. Confirme com a equipe se o serviço solicitado pode ser realizado no endereço combinado.",
   },
   {
     category: "Agendamento e atendimento",
     question: "Quais dias e horários vocês atendem?",
     answer:
-      "Atendemos de segunda a sábado. Os horários de cada dia estão disponíveis na seção de contato do site, mas para confirmar disponibilidade em uma data específica, o mais seguro é falar diretamente pelo WhatsApp.",
+      "O atendimento é feito mediante agendamento. Fale com a equipe pelo WhatsApp para consultar dias e horários disponíveis.",
   },
   {
     category: "Agendamento e atendimento",
@@ -60,13 +62,13 @@ export const GENERAL_FAQS: FaqItem[] = [
     category: "Produtos e segurança",
     question: "Os produtos usados danificam o tecido?",
     answer:
-      "Não. Utilizamos produtos profissionais adequados para cada tipo de tecido, desenvolvidos especificamente para higienização de estofados, o que evita danos, desbotamento ou deformação do material.",
+      "O serviço indicado depende do tipo e das condições do material. A equipe deve avaliar a peça e orientar sobre os cuidados antes de iniciar o atendimento.",
   },
   {
     category: "Produtos e segurança",
     question: "Os produtos são seguros para crianças e pets?",
     answer:
-      "Os produtos utilizados são próprios para higienização profissional de estofados residenciais e automotivos. Ainda assim, recomendamos aguardar a secagem completa antes de permitir que crianças e animais de estimação voltem a usar o estofado normalmente. Nossa equipe orienta o tempo indicado no momento do atendimento.",
+      "Como os produtos e o tempo de secagem variam conforme o material e o serviço, peça à equipe as orientações específicas para crianças e animais antes de voltar a usar o estofado.",
   },
   {
     category: "Produtos e segurança",
@@ -91,13 +93,12 @@ export const GENERAL_FAQS: FaqItem[] = [
     category: "Pagamento e área de cobertura",
     question: "Quanto custa a higienização?",
     answer:
-      "O valor depende do tipo de estofado, da quantidade de peças, do tamanho e do estado de conservação, por isso não trabalhamos com uma tabela fixa de preços. Solicite um orçamento gratuito pelo WhatsApp informando o que precisa higienizar para receber um valor personalizado.",
+      "O valor depende do tipo de peça, da quantidade, do tamanho e das condições do material. Solicite um orçamento pelo WhatsApp informando o que precisa higienizar.",
   },
   {
     category: "Pagamento e área de cobertura",
-    question: "Quais regiões vocês atendem?",
-    answer:
-      "Nossa base fica em Taboão da Serra - SP, e atendemos também Osasco, Santo Amaro, Embu das Artes, Itapevi, Cotia e região. Se você está em uma cidade próxima e não tem certeza se atendemos, é só perguntar pelo WhatsApp.",
+    question: "Quais cidades vocês atendem?",
+    answer: `A Multilimp está localizada em Americana e informa atendimento em ${SERVICE_AREA_NAMES.join(", ").replace(/, ([^,]*)$/, " e $1")}. Consulte a equipe para confirmar a disponibilidade de agenda no seu endereço.`,
   },
   {
     category: "Pagamento e área de cobertura",

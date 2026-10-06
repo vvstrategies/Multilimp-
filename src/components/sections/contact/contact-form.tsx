@@ -32,7 +32,7 @@ export function ContactForm() {
       SERVICES_NAV.find((item) => item.href === service)?.label ?? "Não especificado";
 
     const whatsappMessage = [
-      "Olá! Vim pelo formulário de contato do site da GS Vitaliza.",
+      "Olá! Vim pelo formulário de contato do site da Multilimp Higienização.",
       `Nome: ${name}`,
       `Telefone: ${phone}`,
       `Serviço de interesse: ${serviceLabel}`,

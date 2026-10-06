@@ -14,7 +14,7 @@ import { JsonLd, breadcrumbJsonLd, faqJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Perguntas Frequentes",
   description:
-    "Tire suas dúvidas sobre higienização de estofados, agendamento, produtos, segurança, pagamento e área de atendimento da GS Vitaliza.",
+    "Tire suas dúvidas sobre higienização de estofados, agendamento, produtos, segurança, pagamento e área de atendimento da Multilimp Higienização.",
   path: "/perguntas-frequentes",
 });
 
@@ -69,7 +69,7 @@ export default function FaqPage() {
           <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl bg-muted px-6 py-10 text-center ring-1 ring-border sm:px-10">
             <h2 className="">Ainda tem dúvidas?</h2>
             <p className="max-w-xl text-muted-foreground">
-              Fale diretamente com a nossa equipe pelo WhatsApp e solicite um orçamento gratuito para
+              Fale diretamente com a nossa equipe pelo WhatsApp e solicite um orçamento para
               o seu caso.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServicePageTemplate } from "@/components/sections/services/service-page-template";
 import { SERVICES } from "@/data/services";
+import { SERVICE_AREA_NAMES } from "@/lib/constants";
 import {
   JsonLd,
   breadcrumbJsonLd,
@@ -9,15 +10,6 @@ import {
   pageMetadata,
   serviceJsonLd,
 } from "@/lib/seo";
-
-const AREAS_SERVED = [
-  "Taboão da Serra",
-  "Osasco",
-  "Santo Amaro",
-  "Embu das Artes",
-  "Itapevi",
-  "Cotia",
-];
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -58,7 +50,7 @@ export default async function ServicePage({ params }: PageProps) {
           name: service.name,
           description: service.metaDescription,
           path: `/servicos/${service.slug}`,
-          areasServed: AREAS_SERVED,
+          areasServed: SERVICE_AREA_NAMES,
         })}
       />
       <JsonLd data={faqJsonLd(service.faqs)} />

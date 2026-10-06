@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 
@@ -9,24 +10,30 @@ export function ResultsTeaser() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="">Resultados que você pode ver</h2>
+            <h2 className="">Conheça alguns trabalhos</h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Manchas antigas, sujeira encravada e odores desaparecem com a nossa
-              higienização profissional. Confira exemplos reais de antes e depois.
+              Veja exemplos de sofás e estofados atendidos pela Multilimp Higienização.
             </p>
             <Button variant="cta" size="lg" className="mt-6" render={<Link href="/antes-e-depois" />}>
-              Ver antes e depois
+              Ver galeria de trabalhos
               <ArrowRight className="size-4" aria-hidden="true" />
             </Button>
           </div>
 
           <div className="grid grid-cols-3 gap-3">
-            {[0, 1, 2].map((i) => (
-              <div
-                key={i}
-                className="flex aspect-[3/4] items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 via-muted to-primary/5 ring-1 ring-border"
-              >
-                <Sparkles className="size-6 text-primary/60" aria-hidden="true" />
+            {[
+              ["sofa.webp", "Sofá atendido pela Multilimp"],
+              ["colchao.webp", "Colchão atendido pela Multilimp"],
+              ["bancos-automotivos.webp", "Bancos automotivos atendidos pela Multilimp"],
+            ].map(([file, alt]) => (
+              <div key={file} className="relative aspect-[3/4] overflow-hidden rounded-2xl ring-1 ring-border">
+                <Image
+                  src={`/images/multilimp/${file}`}
+                  alt={alt}
+                  fill
+                  sizes="(max-width: 1024px) 33vw, 16vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>

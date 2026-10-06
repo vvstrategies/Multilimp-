@@ -2,9 +2,9 @@ import { Container } from "@/components/layout/container";
 import { BUSINESS } from "@/lib/constants";
 
 const STATS = [
-  { value: BUSINESS.rating.value.toFixed(1), label: "Estrelas no Google" },
+  { value: BUSINESS.rating.value.toFixed(1), label: "Nota no Google" },
   { value: `${BUSINESS.rating.count}`, label: "Avaliações no Google" },
-  { value: "+1.800", label: "Seguidores no Instagram" },
+  { value: "3+", label: "Anos no mercado" },
 ];
 
 export function StatsRow() {

@@ -21,12 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "GS Vitaliza | Higienização de Estofados em Taboão da Serra",
-    template: "%s | GS Vitaliza",
+    default: "Multilimp Higienização | Americana e região",
+    template: "%s | Multilimp Higienização",
   },
   description:
-    "Higienização profissional de sofás, colchões, bancos automotivos e tapetes com atendimento a domicílio em Taboão da Serra, Osasco e região.",
-  icons: { icon: "/favicon.ico" },
+    "Higienização e impermeabilização de estofados em Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.",
 };
 
 export default function RootLayout({

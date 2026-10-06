@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { ArrowRight, Droplets, Home as HomeIcon, Star, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, CalendarDays, Droplets, Home as HomeIcon, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { BUSINESS } from "@/lib/constants";
 
 const HIGHLIGHTS = [
-  { icon: HomeIcon, label: "Atendimento a domicílio em Taboão da Serra e região" },
-  { icon: Droplets, label: "Produtos profissionais que preservam as fibras do tecido" },
+  { icon: HomeIcon, label: "Atendimento residencial e empresarial na região" },
+  { icon: Droplets, label: "Higienização e impermeabilização de estofados" },
+  { icon: CalendarDays, label: "Mais de três anos de atuação no mercado" },
   { icon: Star, label: `Nota ${BUSINESS.rating.value.toFixed(1)} no Google, com ${BUSINESS.rating.count} avaliações` },
 ];
 
@@ -22,8 +24,8 @@ export function AboutTeaser() {
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-14">
             <h2 className="">Sobre a {BUSINESS.displayName}</h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Somos especialistas em higienização de estofados com atendimento a domicílio,
-              baseados em Taboão da Serra. Nosso foco é a saúde da sua casa ou empresa.
+              Localizada em Americana, a Multilimp atende toda a região com serviços para
+              estofados, tapetes, persianas e outros itens. Conheça nosso trabalho.
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
@@ -46,19 +48,14 @@ export function AboutTeaser() {
             </Button>
           </div>
 
-          <div
-            className="relative min-h-[280px] lg:min-h-full"
-            style={{ background: "linear-gradient(160deg, var(--navy-surface) 0%, var(--navy) 100%)" }}
-          >
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <Sparkles className="size-24 text-white/15" strokeWidth={1} aria-hidden="true" />
-            </div>
-            <span className="absolute top-6 right-6 flex size-12 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow ring-4 ring-white/10">
-              <HomeIcon className="size-5" aria-hidden="true" />
-            </span>
+          <div className="relative min-h-[280px] overflow-hidden lg:min-h-full">
+            <Image
+              src="/images/multilimp/sofa-modular.webp"
+              alt="Sofá modular em um atendimento da Multilimp Higienização"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
         </Reveal>
       </Container>

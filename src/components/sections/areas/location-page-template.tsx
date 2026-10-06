@@ -14,7 +14,7 @@ export function LocationPageTemplate({
   allLocations: LocationDefinition[];
 }) {
   const otherLocations = allLocations.filter((item) => item.slug !== location.slug);
-  const whatsappMessage = `Olá! Vim pelo site da GS Vitaliza e gostaria de solicitar um orçamento para atendimento em ${location.city}.`;
+  const whatsappMessage = `Olá! Vim pelo site da Multilimp Higienização e gostaria de solicitar um orçamento para atendimento em ${location.city}.`;
 
   return (
     <>
@@ -49,7 +49,7 @@ export function LocationPageTemplate({
                 />
               }
             >
-              Solicitar orçamento gratuito
+              Solicitar orçamento
             </Button>
           </div>
         </Container>
@@ -80,8 +80,8 @@ export function LocationPageTemplate({
             Serviços disponíveis em {location.city}
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            Levamos até {location.city} a linha completa de higienização profissional de
-            estofados da GS Vitaliza.
+            Consulte a disponibilidade de higienização e impermeabilização de estofados, tapetes,
+            carpetes e outros itens atendidos pela Multilimp em {location.city}.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES_NAV.map((service) => (
@@ -150,8 +150,7 @@ export function LocationPageTemplate({
             Outras áreas atendidas
           </h2>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            A GS Vitaliza também atende outras cidades da região. Confira a disponibilidade para a
-            sua.
+            A Multilimp Higienização também atende outras cidades informadas na área de cobertura.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {otherLocations.map((item) => (
@@ -182,7 +181,7 @@ export function LocationPageTemplate({
               Pronto para higienizar seus estofados em {location.city}?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">
-              Fale agora com a GS Vitaliza e solicite um orçamento gratuito, sem compromisso.
+              Fale agora com a Multilimp Higienização para solicitar um orçamento e confirmar a agenda.
             </p>
           </div>
           <Button

@@ -14,10 +14,9 @@ export function AboutStory() {
             transportar sofás, colchões ou bancos automotivos até nós.
           </p>
           <p>
-            O nosso trabalho vai além da limpeza visível: o foco é a saúde do ambiente. Usamos
-            produtos profissionais que fazem uma limpeza profunda das fibras do tecido,
-            eliminando ácaros, bactérias, fungos e odores, sem danificar ou desgastar o
-            material.
+            O atendimento começa pela avaliação do tipo de peça e do material. A Multilimp oferece
+            higienização e impermeabilização de estofados, além de serviços para tapetes,
+            persianas e carpetes.
           </p>
           <p>
             Atendemos tanto residências quanto empresas, e também oferecemos

@@ -5,13 +5,13 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
 import { LOCATIONS } from "@/data/locations";
-import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
+import { DEFAULT_WHATSAPP_MESSAGE, SERVICE_AREA_NAMES, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Áreas Atendidas | Higienização de Estofados na Grande São Paulo",
+  title: "Áreas Atendidas | Multilimp Higienização",
   description:
-    "A GS Vitaliza atende Taboão da Serra e cidades da região oeste da Grande São Paulo. Veja as cidades atendidas e consulte disponibilidade para a sua região.",
+    "Veja as cidades atendidas pela Multilimp Higienização: Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.",
   path: "/areas-atendidas",
 });
 
@@ -33,12 +33,11 @@ export default function AreasAtendidasPage() {
             items={[{ label: "Início", href: "/" }, { label: "Áreas Atendidas" }]}
           />
           <h1 className="mt-6 max-w-3xl">
-            Áreas Atendidas pela GS Vitaliza
+            Cidades atendidas pela Multilimp Higienização
           </h1>
           <p className="mt-5 max-w-2xl text-base text-navy-muted">
-            Higienização profissional de sofás, colchões, bancos automotivos, tapetes e
-            impermeabilização de estofados, com atendimento a domicílio em Taboão da Serra e
-            cidades da região.
+            Higienização e impermeabilização de estofados, tapetes, persianas, carpetes e
+            bancos automotivos, com atendimento em Americana e nas cidades da região.
           </p>
         </Container>
       </section>
@@ -47,11 +46,10 @@ export default function AreasAtendidasPage() {
       <section className="py-14 sm:py-16">
         <Container className="max-w-3xl">
           <p className="text-base leading-relaxed text-foreground">
-            A GS Vitaliza é baseada em Taboão da Serra e atende, com cobertura confirmada, Osasco
-            e o bairro de Santo Amaro, na zona sul de São Paulo. Também atendemos Embu das Artes,
-            Itapevi e Cotia, cidades da região oeste da Grande São Paulo, conforme a
-            disponibilidade da nossa agenda. Consulte disponibilidade para a sua região pelo
-            WhatsApp.
+            A Multilimp Higienização está localizada em Americana e informa atendimento em{" "}
+            {SERVICE_AREA_NAMES.join(", ").replace(/, ([^,]*)$/, " e $1")}. O serviço é agendado
+            conforme a disponibilidade da equipe. Entre em contato para confirmar a cobertura do
+            seu endereço e consultar datas.
           </p>
         </Container>
       </section>
@@ -93,11 +91,11 @@ export default function AreasAtendidasPage() {
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="">
-              Não encontrou a sua cidade?
+              Precisa de atendimento em outra cidade?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">
-              Fale com a GS Vitaliza pelo WhatsApp e consulte disponibilidade de atendimento para
-              a sua região.
+              Fale com a Multilimp Higienização pelo WhatsApp para consultar a disponibilidade
+              para o seu endereço.
             </p>
           </div>
           <Button

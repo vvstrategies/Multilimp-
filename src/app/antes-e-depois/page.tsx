@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
-import { GalleryPlaceholderGrid } from "@/components/sections/gallery/placeholder-grid";
+import { PhotoGrid } from "@/components/sections/gallery/photo-grid";
 import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Antes e Depois | Resultados de Higienização de Estofados",
+  title: "Galeria de Trabalhos | Multilimp Higienização",
   description:
-    "Veja como a higienização profissional da GS Vitaliza transforma sofás, colchões, bancos automotivos e tapetes. Galeria em atualização com novos casos reais.",
+    "Veja fotos de peças atendidas pela Multilimp Higienização: sofás, colchões, poltronas, cadeiras e bancos automotivos.",
   path: "/antes-e-depois",
 });
 
@@ -19,42 +19,36 @@ export default function AntesEDepoisPage() {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Início", path: "/" },
-          { name: "Antes e Depois", path: "/antes-e-depois" },
+          { name: "Galeria de trabalhos", path: "/antes-e-depois" },
         ])}
       />
 
       {/* Hero */}
       <section className="bg-navy text-navy-foreground py-16 sm:py-20">
         <Container>
-          <Breadcrumbs variant="dark" items={[{ label: "Início", href: "/" }, { label: "Antes e Depois" }]} />
+          <Breadcrumbs variant="dark" items={[{ label: "Início", href: "/" }, { label: "Galeria de trabalhos" }]} />
           <h1 className="mt-6 max-w-3xl">
-            Antes e Depois
+            Galeria de trabalhos
           </h1>
           <p className="mt-5 max-w-2xl text-base text-navy-muted">
-            Resultados reais da higienização profissional de sofás, colchões, bancos automotivos e
-            tapetes feita pela GS Vitaliza.
+            Fotos de sofás, colchões, poltronas, cadeiras e bancos automotivos atendidos pela
+            Multilimp Higienização.
           </p>
         </Container>
       </section>
 
-      {/* Intro + honesty note */}
       <section className="py-14 sm:py-16">
         <Container className="max-w-3xl">
           <p className="text-base leading-relaxed text-foreground">
-            Estamos organizando nossa galeria de fotos reais de antes e depois. Enquanto reunimos
-            esse material, veja abaixo os tipos de serviço que documentamos em cada atendimento.
-          </p>
-          <p className="mt-3 rounded-xl bg-muted px-4 py-3 text-sm text-muted-foreground ring-1 ring-border">
-            Galeria em atualização com novos casos reais. Peça exemplos de trabalhos recentes
-            diretamente pelo WhatsApp.
+            Conheça alguns dos tipos de peças atendidos pela equipe. As imagens mostram exemplos de
+            trabalhos compartilhados pela empresa; não são comparativos de antes e depois.
           </p>
         </Container>
       </section>
 
-      {/* Placeholder grid */}
       <section className="border-t border-border bg-muted/40 py-14 sm:py-16">
         <Container>
-          <GalleryPlaceholderGrid />
+          <PhotoGrid />
         </Container>
       </section>
 
@@ -63,11 +57,11 @@ export default function AntesEDepoisPage() {
         <Container className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="">
-              Quer ver exemplos de trabalhos recentes?
+              Quer consultar um serviço para a sua peça?
             </h2>
             <p className="mt-3 max-w-xl text-navy-muted">
-              Fale com a nossa equipe pelo WhatsApp e peça fotos de casos reais para o seu tipo de
-              estofado.
+              Fale com a equipe pelo WhatsApp para informar o tipo de peça e confirmar a
+              disponibilidade do atendimento.
             </p>
           </div>
           <Button
@@ -81,7 +75,7 @@ export default function AntesEDepoisPage() {
               />
             }
           >
-            Pedir exemplos no WhatsApp
+            Falar com a equipe
           </Button>
         </Container>
       </section>

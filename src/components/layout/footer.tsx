@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Star } from "lucide-react";
+import { Mail, MapPin, Phone, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import {
   AREAS_NAV,
@@ -15,19 +15,19 @@ export function Footer() {
     <footer className="bg-navy text-navy-foreground">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="inline-flex rounded-xl bg-white px-3 py-2" aria-label={BUSINESS.displayName}>
+          <Link href="/" className="inline-flex items-center gap-3" aria-label={BUSINESS.displayName}>
             <Image
-              src="/images/logo-gs.png"
-              alt={BUSINESS.displayName}
-              width={806}
-              height={309}
-              className="h-10 w-auto"
+              src="/images/multilimp/logo.webp"
+              alt=""
+              width={315}
+              height={255}
+              className="size-14 rounded-full object-cover"
             />
+            <span className="text-sm font-semibold text-white">{BUSINESS.displayName}</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-navy-muted">
-            Higienização profissional de sofás, colchões, bancos automotivos, tapetes e
-            impermeabilização de estofados, com atendimento a domicílio em Taboão da Serra,
-            Osasco, Santo Amaro e região.
+            Higienização e impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes,
+            poltronas e bancos automotivos em Americana e cidades da região.
           </p>
           <div className="mt-4 flex items-center gap-1.5 text-sm text-navy-muted">
             <Star className="size-4 fill-primary text-primary" aria-hidden="true" />
@@ -52,7 +52,22 @@ export function Footer() {
               <circle cx="12" cy="12" r="4" />
               <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
             </svg>
-            @gsvitaliza
+            @multlimp.higienizacao_
+          </a>
+          <a
+            href={BUSINESS.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center text-sm text-navy-muted hover:text-navy-foreground"
+          >
+            Facebook
+          </a>
+          <a
+            href={`mailto:${BUSINESS.email}`}
+            className="mt-3 inline-flex items-center gap-2 text-sm text-navy-muted hover:text-navy-foreground"
+          >
+            <Mail className="size-4 shrink-0" aria-hidden="true" />
+            {BUSINESS.email}
           </a>
         </div>
 

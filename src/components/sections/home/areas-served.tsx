@@ -11,7 +11,7 @@ export function AreasServed() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="">Áreas atendidas</h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Atendimento a domicílio em Taboão da Serra e cidades da região.
+            Atendimento em Americana e nas cidades da região indicadas pela Multilimp.
           </p>
         </div>
 

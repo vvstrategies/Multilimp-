@@ -1,8 +1,8 @@
 {
-  "name": "gsvitaliza-site",
+  "name": "multilimp-higienizacao-site",
   "version": "0.4.0",
   "private": true,
-  "description": "Site institucional da GS Vitaliza para higienização profissional de estofados em Taboão da Serra e região.",
+  "description": "Site institucional da Multilimp Higienização para higienização e impermeabilização de estofados em Americana e região.",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   },
   "keywords": [
     "nextjs",
-    "gs-vitaliza",
+    "multilimp-higienizacao",
     "higienizacao-de-estofados",
     "site-institucional"
   ],

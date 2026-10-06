@@ -60,10 +60,10 @@ export function localBusinessJsonLd(areasServed: string[] = []) {
     name: BUSINESS.legalName,
     alternateName: BUSINESS.displayName,
     description:
-      "Higienização profissional de sofás, colchões, bancos automotivos, tapetes e impermeabilização de estofados, com atendimento a domicílio em Taboão da Serra e região.",
+      "Higienização e impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes, poltronas e bancos automotivos, com atendimento na região de Americana.",
     url: SITE_URL,
     telephone: BUSINESS.phoneE164,
-    priceRange: "$$",
+    email: BUSINESS.email,
     image: `${SITE_URL}/opengraph-image`,
     address: addressJsonLd(),
     ...(BUSINESS.geo
@@ -84,7 +84,7 @@ export function localBusinessJsonLd(areasServed: string[] = []) {
       ratingValue: BUSINESS.rating.value,
       reviewCount: BUSINESS.rating.count,
     },
-    sameAs: [BUSINESS.instagram],
+    sameAs: [BUSINESS.instagram, BUSINESS.facebook, BUSINESS.googleReviewsUrl],
   };
 }
 
@@ -110,6 +110,7 @@ export function serviceJsonLd({
       "@type": "LocalBusiness",
       name: BUSINESS.legalName,
       telephone: BUSINESS.phoneE164,
+      email: BUSINESS.email,
       address: addressJsonLd(),
     },
     areaServed:

@@ -7,9 +7,9 @@ import { StatsRow } from "@/components/sections/home/stats-row";
 import { CtaBanner } from "@/components/sections/home/cta-banner";
 
 export const metadata = pageMetadata({
-  title: "Sobre a Empresa | Higienização de Estofados em Taboão da Serra",
+  title: "Sobre a Multilimp Higienização",
   description:
-    "Conheça a GS Vitaliza: especialistas em higienização de sofás, colchões, bancos automotivos e tapetes, com atendimento a domicílio em Taboão da Serra e região e nota 5,0 no Google.",
+    "Conheça a Multilimp Higienização, empresa há mais de três anos no mercado e especializada em higienização e impermeabilização de estofados em Americana e região.",
   path: "/sobre",
 });
 
@@ -30,7 +30,7 @@ export default function SobrePage() {
       <StatsRow />
       <CtaBanner
         title="Vamos cuidar dos seus estofados?"
-        description="Solicite um orçamento gratuito e agende o atendimento a domicílio com a GS Vitaliza."
+        description="Solicite um orçamento e consulte a disponibilidade de atendimento com a Multilimp Higienização."
         source="sobre_final_cta"
       />
     </>
