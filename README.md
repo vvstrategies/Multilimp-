@@ -49,10 +49,15 @@ O site fica disponivel em http://localhost:3000. Para desenvolvimento com hot re
 - `src/data/` — conteudo de servicos, localidades, FAQ e blog
 - `src/lib/constants.ts` — dados centrais da empresa, contato, navegacao e URL publica
 - `public/images/multilimp/` — logo e fotos otimizadas da empresa
-- `public/videos/` — vídeos de atendimento
 - `src/app/icon.png` — ícone da marca
 
-O site mantém as páginas por serviço e por cidade atendida. As avaliações são consultadas no perfil público do Google para evitar exibir comentários desatualizados.
+O site mantém as páginas por serviço e por cidade atendida. As avaliações podem ser carregadas pela Places API (New), sempre no servidor e com cache de seis horas. Sem credencial, o site mantém um fallback com a nota, a contagem e o link do perfil, sem inventar comentários.
+
+## Avaliações do Google
+
+Copie `.env.example` para `.env.local` e preencha `GOOGLE_PLACES_API_KEY` com uma chave restrita à Places API (New). O Place ID verificado da Multilimp já está configurado; `GOOGLE_PLACE_ID` só precisa ser alterado se o estabelecimento mudar.
+
+Nunca use o prefixo `NEXT_PUBLIC_` na chave da API.
 
 Ao atualizar informações comerciais, mantenha telefone, endereço, redes sociais, perfil do Google e cidades em `src/lib/constants.ts` e nos dados de conteúdo correspondentes.
 

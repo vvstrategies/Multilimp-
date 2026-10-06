@@ -30,6 +30,7 @@ export const BUSINESS = {
   facebook:
     "https://www.facebook.com/people/MultLimp-Higieniza%C3%A7%C3%B5es-de-Estofados-e-Tapetes/61558442032455/",
   googleReviewsUrl: "https://share.google/6IWGomAce6JDjRsrv",
+  googlePlaceId: "ChIJpZsuJCmbyJQRfhmij8eITxk",
 } as const;
 
 export const SERVICE_AREA_NAMES = [

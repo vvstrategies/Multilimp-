@@ -19,7 +19,7 @@ export function pageMetadata({
   const ogImages = images && images.length > 0 ? images : undefined;
 
   return {
-    title,
+    title: title.includes(SITE_NAME) ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: {

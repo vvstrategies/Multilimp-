@@ -61,8 +61,7 @@ export function Hero() {
               src="/images/multilimp/hero-sofa.webp"
               alt="Sofá em uma área de atendimento da Multilimp Higienização"
               fill
-              priority
-              quality={92}
+              preload
               sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover"
             />

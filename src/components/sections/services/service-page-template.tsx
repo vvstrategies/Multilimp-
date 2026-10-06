@@ -151,6 +151,7 @@ export function ServicePageTemplate({
                 alt={service.heroHeadline}
                 width={1200}
                 height={900}
+                preload
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-white/10"
               />

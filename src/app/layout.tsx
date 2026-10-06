@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFloatButton } from "@/components/layout/whatsapp-float-button";
@@ -11,11 +11,6 @@ const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -36,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${plexSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plexSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <JsonLd data={localBusinessJsonLd()} />

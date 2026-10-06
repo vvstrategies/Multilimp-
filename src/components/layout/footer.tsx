@@ -17,11 +17,12 @@ export function Footer() {
         <div className="sm:col-span-2 lg:col-span-2">
           <Link href="/" className="inline-flex items-center gap-3" aria-label={BUSINESS.displayName}>
             <Image
-              src="/images/multilimp/logo.webp"
+              src="/images/multilimp/logo-multilimp.webp"
               alt=""
-              width={315}
-              height={255}
-              className="size-14 rounded-full object-cover"
+              width={579}
+              height={465}
+              sizes="92px"
+              className="h-auto w-[92px] rounded-xl bg-white p-2 object-contain"
             />
             <span className="text-sm font-semibold text-white">{BUSINESS.displayName}</span>
           </Link>

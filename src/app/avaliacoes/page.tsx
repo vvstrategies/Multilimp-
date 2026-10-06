@@ -3,7 +3,9 @@ import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
 import { ReviewsHeader } from "@/components/sections/reviews/reviews-header";
-import { BUSINESS, DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
+import { ReviewCard } from "@/components/sections/reviews/review-card";
+import { DEFAULT_WHATSAPP_MESSAGE, whatsappHref } from "@/lib/constants";
+import { getGoogleReviews } from "@/lib/google-reviews";
 import { breadcrumbJsonLd, JsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -13,7 +15,9 @@ export const metadata: Metadata = pageMetadata({
   path: "/avaliacoes",
 });
 
-export default function AvaliacoesPage() {
+export default async function AvaliacoesPage() {
+  const reviewData = await getGoogleReviews();
+
   return (
     <>
       <JsonLd
@@ -31,8 +35,8 @@ export default function AvaliacoesPage() {
           />
           <h1 className="mt-6 max-w-3xl">Avaliações da Multilimp Higienização</h1>
           <p className="mt-5 max-w-2xl text-base text-navy-muted">
-            A Multilimp tem nota {BUSINESS.rating.value.toFixed(1)} no Google, com{" "}
-            {BUSINESS.rating.count} avaliações. Consulte os comentários diretamente no perfil
+            A Multilimp tem nota {reviewData.rating.toFixed(1)} no Google, com{" "}
+            {reviewData.totalReviews} avaliações. Consulte os comentários diretamente no perfil
             público para ver as informações mais recentes.
           </p>
           <div className="mt-8">
@@ -41,7 +45,7 @@ export default function AvaliacoesPage() {
               size="xl"
               render={
                 <a
-                  href={BUSINESS.googleReviewsUrl}
+                  href={reviewData.googleMapsUri}
                   target="_blank"
                   rel="noopener noreferrer"
                 />
@@ -54,13 +58,30 @@ export default function AvaliacoesPage() {
       </section>
 
       <section className="py-14 sm:py-16">
-        <Container className="max-w-3xl">
-          <h2 className="">Avaliações públicas</h2>
+        <Container>
+          <div className="mx-auto max-w-3xl">
+            <h2>Avaliações públicas</h2>
           <p className="mt-3 text-muted-foreground">
-            Para manter os comentários e a contagem atualizados, as avaliações são exibidas no
-            próprio perfil da Multilimp no Google.
+              As avaliações abaixo são carregadas pelo Google e atualizadas periodicamente.
           </p>
-          <ReviewsHeader className="mt-8 rounded-2xl bg-card p-5 ring-1 ring-border" />
+            <ReviewsHeader
+              data={reviewData}
+              className="mt-8 rounded-2xl bg-card p-5 ring-1 ring-border"
+            />
+          </div>
+
+          {reviewData.reviews.length > 0 ? (
+            <div className="mt-8 grid auto-cols-[min(85vw,23rem)] grid-flow-col gap-5 overflow-x-auto px-0.5 pb-3 snap-x snap-mandatory lg:grid-flow-row lg:grid-cols-3 lg:overflow-visible">
+              {reviewData.reviews.map((review) => (
+                <ReviewCard key={review.id} review={review} />
+              ))}
+            </div>
+          ) : (
+            <div className="mx-auto mt-6 max-w-3xl rounded-2xl bg-muted/50 p-5 text-sm text-muted-foreground ring-1 ring-border">
+              Os comentários não estão disponíveis no momento. A página continua funcionando e
+              você pode consultar todas as avaliações pelo botão do Google acima.
+            </div>
+          )}
         </Container>
       </section>
 

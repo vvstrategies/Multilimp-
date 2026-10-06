@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
@@ -8,7 +7,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-heading: var(--font-sans);
   --color-navy: var(--navy);
   --color-navy-card: var(--navy-card);
@@ -168,15 +167,8 @@
   }
 }
 
-/* Scroll-reveal primitive (see components/motion/reveal.tsx) */
+/* Content stays visible without waiting for client-side hydration. */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal.reveal-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -199,22 +191,9 @@
   transform: scaleX(0);
   transform-origin: left center;
 }
-.hero-underline.reveal-in::before {
-  animation: highlightSlide 0.8s ease-in-out forwards;
-  animation-delay: 0.3s;
-}
-@keyframes highlightSlide {
-  0% {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0.55;
-    transform: scaleX(1);
-  }
+.hero-underline::before {
+  opacity: 0.55;
+  transform: scaleX(1);
 }
 
 /* Process timeline — ported from Vizentec's .impl-timeline-* structure */
@@ -236,19 +215,9 @@
   opacity: 0;
   background: linear-gradient(90deg, var(--border), var(--primary) 60%, var(--primary));
 }
-.reveal-in .timeline-line-draw {
-  animation: timelineLineReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.12s;
-}
-@keyframes timelineLineReveal {
-  from {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  to {
-    transform: scaleX(1);
-    opacity: 1;
-  }
+.reveal .timeline-line-draw {
+  transform: scaleX(1);
+  opacity: 1;
 }
 .timeline-steps:hover .timeline-step {
   opacity: 0.5;
