@@ -40,6 +40,12 @@ next-env.d.ts
 
 # Local settings (not project config)
 .claude/settings.local.json
+.mcp.json
+.playwright-mcp/
+
+# Untracked local media
+/fotos/
+/SaveClip.App_*.jpg
 
 # User-specific skills (not part of the template)
 .claude/skills/customize/

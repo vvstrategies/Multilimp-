@@ -1,33 +1,28 @@
 {
-  "name": "ai-website-clone-template",
+  "name": "gsvitaliza-site",
   "version": "0.4.0",
   "private": true,
-  "description": "Clone any website into a clean, modern Next.js codebase using AI coding agents",
-  "author": "JCodesMore",
+  "description": "Site institucional da GS Vitaliza para higienização profissional de estofados em Taboão da Serra e região.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
+    "url": "https://github.com/vvstrategies/Multilimp-.git"
   },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
+  "homepage": "https://gsvitaliza.com.br",
   "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
+    "url": "https://github.com/vvstrategies/Multilimp-/issues"
   },
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
     "nextjs",
-    "ai",
-    "template",
-    "tailwindcss",
-    "shadcn-ui"
+    "gs-vitaliza",
+    "higienizacao-de-estofados",
+    "site-institucional"
   ],
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

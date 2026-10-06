@@ -8,7 +8,7 @@ echo  ============================================
 echo   GS Vitaliza - iniciando o site local
 echo  ============================================
 echo.
-echo   No computador:  http://localhost:3000
+echo   No computador:  http://localhost:3001
 echo.
 echo   No celular, use o endereco "Network" que
 echo   aparece abaixo (o celular precisa estar na
@@ -28,7 +28,7 @@ if not exist "node_modules" (
 
 rem Abre o navegador alguns segundos depois, ja com o servidor de pe.
 rem Caminho absoluto do timeout.exe para nao depender do PATH.
-start "" /b cmd /c "%SystemRoot%\System32\timeout.exe /t 5 /nobreak >nul & start "" http://localhost:3000"
+start "" /b cmd /c "%SystemRoot%\System32\timeout.exe /t 5 /nobreak >nul & start "" http://localhost:3001"
 
 call npm run dev
 
