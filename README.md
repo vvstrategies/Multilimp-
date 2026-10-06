@@ -2,7 +2,7 @@
 
 Site institucional da Multilimp Higienização, empresa localizada em Americana e especializada em higienização e impermeabilização de estofados.
 
-- Site atualmente configurado: https://gsvitaliza.com.br
+- Site atualmente configurado: https://palegoldenrod-peafowl-249350.hostingersite.com
 - Repositorio: https://github.com/vvstrategies/Multilimp-
 
 O domínio acima foi mantido porque não foi informado um novo domínio para a marca. Antes de trocar o domínio público, atualize `SITE_URL` em `src/lib/constants.ts` e o campo `homepage` deste arquivo e de `package.json`.
