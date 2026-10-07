@@ -123,17 +123,19 @@ export default function ContatoPage() {
                 href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block overflow-hidden rounded-3xl bg-muted ring-1 ring-border transition-colors hover:ring-primary"
+                className="group block overflow-hidden rounded-3xl ring-1 ring-border transition-shadow hover:shadow-glow"
               >
-                <div className="flex h-48 flex-col items-center justify-center gap-2 bg-[linear-gradient(135deg,_var(--color-muted)_0%,_var(--color-accent)_100%)] px-6 text-center">
-                  <MapPin className="size-8 text-primary" aria-hidden="true" />
-                  <p className="text-sm font-medium text-foreground">
+                <div className="flex h-48 flex-col items-center justify-center gap-2 bg-[radial-gradient(120%_120%_at_50%_0%,_rgba(8,119,201,0.28)_0%,_var(--navy-card)_62%,_var(--navy)_100%)] px-6 text-center">
+                  <span className="flex size-11 items-center justify-center rounded-full bg-white/10 text-primary-soft ring-1 ring-white/15">
+                    <MapPin className="size-5" aria-hidden="true" />
+                  </span>
+                  <p className="mt-1 text-sm font-medium text-white">
                     {BUSINESS.address.street} - {BUSINESS.address.neighborhood}
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-white/60">
                     {BUSINESS.address.city} - {BUSINESS.address.state}
                   </p>
-                  <span className="mt-1 text-xs font-semibold text-primary group-hover:underline">
+                  <span className="mt-1 text-xs font-semibold text-primary-soft group-hover:underline">
                     Abrir no Google Maps
                   </span>
                 </div>

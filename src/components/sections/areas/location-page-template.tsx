@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MapPin, Star } from "lucide-react";
+import { ArrowRight, MapPin, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
-import { BUSINESS, SERVICES_NAV, whatsappHref } from "@/lib/constants";
+import { ServicesBento } from "@/components/sections/services/services-bento";
+import { BUSINESS, whatsappHref } from "@/lib/constants";
 import type { LocationDefinition } from "@/types/location";
 
 export function LocationPageTemplate({
@@ -83,28 +84,7 @@ export function LocationPageTemplate({
             Consulte a disponibilidade de higienização e impermeabilização de estofados, tapetes,
             carpetes e outros itens atendidos pela Multilimp em {location.city}.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES_NAV.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="group flex flex-col gap-2 rounded-2xl p-6 ring-1 ring-border transition-colors hover:bg-muted/60"
-              >
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <span className="font-medium">{service.label}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
-                <span className="mt-1 flex items-center gap-1 text-sm font-medium text-primary">
-                  Saiba mais
-                  <ArrowRight
-                    className="size-3.5 transition-transform group-hover:translate-x-0.5"
-                    aria-hidden="true"
-                  />
-                </span>
-              </Link>
-            ))}
-          </div>
+          <ServicesBento className="mt-8" />
         </Container>
       </section>
 

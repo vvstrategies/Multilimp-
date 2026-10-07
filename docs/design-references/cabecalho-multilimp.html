@@ -1,0 +1,462 @@
+<title>Cabeçalho Multilimp</title>
+
+<!-- Layout: one centred rail; a scrollable stage demos the bar in both states, specs sit beside it. -->
+<style>
+  :root {
+    /* Marca Multilimp — navy do logo, azul de serviço, branco. Tema único escuro. */
+    --navy: #070f1c;
+    --navy-deep: #050b15;
+    --navy-card: #0b1a2e;
+    --surface: #0f2340;
+    --blue: #0877c9;
+    --blue-soft: #4aa6e8;
+    --ink: #ffffff;
+    --ink-muted: #9db0cb;
+    --line: rgba(255, 255, 255, 0.12);
+
+    --glass-bg: rgba(7, 15, 28, 0.42);
+    --glass-line: rgba(255, 255, 255, 0.2);
+
+    --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--navy);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 1080px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    padding-block: 56px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .eyebrow {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-soft);
+  }
+
+  h1 {
+    margin: 10px 0 0;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .lede {
+    margin: 14px 0 0;
+    max-width: 62ch;
+    color: var(--ink-muted);
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .note {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--ink-muted);
+    max-width: 64ch;
+  }
+
+  section { display: flex; flex-direction: column; gap: 18px; }
+
+  /* ---------- barra ---------- */
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 14px 16px;
+  }
+
+  .bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 1140px;
+    margin-inline: auto;
+    padding: 10px 10px 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    transition:
+      max-width 0.26s cubic-bezier(0, 0, 0.2, 1),
+      padding 0.26s cubic-bezier(0, 0, 0.2, 1),
+      background-color 0.26s cubic-bezier(0, 0, 0.2, 1),
+      border-color 0.26s cubic-bezier(0, 0, 0.2, 1),
+      box-shadow 0.26s cubic-bezier(0, 0, 0.2, 1),
+      backdrop-filter 0.26s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .is-stuck .bar-inner {
+    max-width: 1040px;
+    padding: 10px 10px 10px 24px;
+    background: var(--glass-bg);
+    border-color: var(--glass-line);
+    backdrop-filter: blur(14px) saturate(1.5);
+    -webkit-backdrop-filter: blur(14px) saturate(1.5);
+    box-shadow:
+      0 14px 40px rgba(3, 8, 16, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .brand { display: flex; align-items: center; margin-right: auto; text-decoration: none; }
+  .brand img { height: 30px; width: auto; display: block; }
+  .brand span {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    max-width: 7.5em;
+  }
+
+  .nav { display: flex; align-items: center; gap: 2px; }
+  .nav a {
+    padding: 8px 11px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.86);
+    text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease;
+  }
+  .nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(8, 119, 201, 0.4);
+    transition: background-color 0.18s ease, transform 0.18s ease;
+  }
+  .cta:hover { background: #0a86e0; transform: translateY(-1px); }
+  .cta svg { width: 16px; height: 16px; }
+
+  /* ---------- palco ---------- */
+
+  .stage {
+    position: relative;
+    height: 520px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--navy-deep);
+  }
+
+  .stage-hero {
+    position: relative;
+    min-height: 420px;
+    margin-top: -72px;
+    padding: 120px 32px 56px;
+    background:
+      radial-gradient(70% 90% at 78% 12%, rgba(8, 119, 201, 0.4), transparent 62%),
+      linear-gradient(180deg, #123158 0%, var(--navy) 78%);
+  }
+
+  .stage-hero h3 {
+    margin: 0;
+    max-width: 16ch;
+    font-size: clamp(26px, 3.4vw, 38px);
+    line-height: 1.14;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .stage-hero h3 em { font-style: normal; color: var(--blue-soft); }
+  .stage-hero p { margin: 14px 0 0; max-width: 46ch; color: var(--ink-muted); }
+
+  .stage-body { padding: 8px 32px 56px; display: flex; flex-direction: column; gap: 14px; }
+  .filler {
+    height: 96px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: linear-gradient(160deg, var(--surface), var(--navy-card));
+  }
+
+  .hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  /* ---------- mobile + specs ---------- */
+
+  .split {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .phone {
+    width: 300px;
+    max-width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    padding: 10px;
+    background: var(--navy-card);
+  }
+  .phone-screen {
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      radial-gradient(90% 70% at 70% 0%, rgba(8, 119, 201, 0.38), transparent 60%),
+      linear-gradient(180deg, #123158, var(--navy) 80%);
+    padding: 12px 12px 22px;
+  }
+  .phone .bar-inner {
+    max-width: none;
+    padding: 8px 8px 8px 12px;
+    background: var(--glass-bg);
+    border-color: var(--glass-line);
+    backdrop-filter: blur(14px) saturate(1.5);
+    -webkit-backdrop-filter: blur(14px) saturate(1.5);
+    box-shadow:
+      0 12px 30px rgba(3, 8, 16, 0.42),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+  .phone .brand img { height: 26px; }
+  .burger {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--glass-line);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+  .sheet {
+    margin-top: 12px;
+    border-radius: 18px;
+    border: 1px solid var(--glass-line);
+    background: rgba(7, 15, 28, 0.66);
+    backdrop-filter: blur(14px) saturate(1.5);
+    -webkit-backdrop-filter: blur(14px) saturate(1.5);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sheet a {
+    padding: 9px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+  }
+  .sheet a:hover { background: rgba(255, 255, 255, 0.1); }
+  .sheet .cta { margin-top: 8px; justify-content: center; }
+
+  .specs { display: flex; flex-direction: column; gap: 0; }
+  .spec {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 16px;
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .spec:last-child { border-bottom: 1px solid var(--line); }
+  .spec dt { color: var(--ink-muted); }
+  .spec dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--ink);
+    word-break: break-word;
+  }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px 8px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-size: 13px;
+    font-family: var(--font-mono);
+  }
+  .chip { width: 24px; height: 24px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.2); }
+
+  @media (max-width: 760px) {
+    .split { grid-template-columns: minmax(0, 1fr); }
+    .phone { margin-inline: auto; }
+    .spec { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+    .stage { height: 440px; }
+    .stage-hero { padding-inline: 20px; }
+    .stage-body { padding-inline: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bar-inner, .cta, .nav a { transition-duration: 0.01ms; }
+  }
+
+  a:focus-visible, .burger:focus-visible {
+    outline: 2px solid var(--blue-soft);
+    outline-offset: 3px;
+  }
+</style>
+
+<div class="page">
+  <header>
+    <p class="eyebrow">Multilimp Higienização · rascunho</p>
+    <h1>Cabeçalho liquid glass</h1>
+    <p class="lede">
+      No topo a barra some sobre o hero: só a logo, os links e o botão. Ao rolar, ela encolhe
+      para uma pílula de vidro navy que desfoca e satura o que passa por baixo. Mesma mecânica
+      do cabeçalho da Herboclean, com a paleta e a logo da Multilimp.
+    </p>
+  </header>
+
+  <section>
+    <h2>Rolagem dentro do palco</h2>
+    <p class="note">O quadro abaixo tem rolagem própria — desça alguns pixels para ver a barra virar vidro.</p>
+
+    <div class="stage" id="stage">
+      <div class="bar">
+        <div class="bar-inner">
+          <a class="brand" href="#">
+            <img src="logo-multilimp-branca-compacta.png" alt="Multilimp Higienização" />
+          </a>
+          <nav class="nav">
+            <a href="#">Serviços</a>
+            <a href="#">Áreas atendidas</a>
+            <a href="#">Avaliações</a>
+            <a href="#">Blog</a>
+            <a href="#">Contato</a>
+          </nav>
+          <a class="cta" href="#">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.86 9.86 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.34-.5.05-.98.23-3.3-.69-2.78-1.1-4.55-3.95-4.69-4.14-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.01.96-2.29.25-.27.54-.34.72-.34h.52c.17 0 .39-.6.6.46.23.55.78 1.9.85 2.04.07.14.11.3.02.48-.9.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.27.71 1.17 1.52 1.9 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07s.68-.79.86-1.07c.18-.27.36-.23.6-.14.25.9.59 1.57.81 1.84.23.27.39.41.45.46.07.05.07.52-.17 1.19Z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="stage-hero">
+        <h3>Seu estofado <em>como novo</em>, sem sair de casa</h3>
+        <p>Higienização e impermeabilização de sofás, colchões, tapetes, persianas e bancos automotivos em Americana e região.</p>
+      </div>
+
+      <div class="stage-body">
+        <span class="hint">↓ continue rolando</span>
+        <div class="filler"></div>
+        <div class="filler"></div>
+        <div class="filler"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mobile e receita do vidro</h2>
+    <div class="split">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="bar-inner">
+            <a class="brand" href="#">
+              <img src="logo-multilimp-branca-compacta.png" alt="Multilimp Higienização" />
+            </a>
+            <button class="burger" type="button" aria-label="Abrir menu">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+          <div class="sheet">
+            <a href="#">Início</a>
+            <a href="#">Serviços</a>
+            <a href="#">Áreas atendidas</a>
+            <a href="#">Avaliações</a>
+            <a href="#">Contato</a>
+            <a class="cta" href="#">Falar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <dl class="specs">
+          <div class="spec"><dt>Fundo do vidro</dt><dd>rgba(7, 15, 28, 0.42)</dd></div>
+          <div class="spec"><dt>Desfoque</dt><dd>blur(14px) saturate(1.5)</dd></div>
+          <div class="spec"><dt>Borda</dt><dd>1px solid rgba(255,255,255,0.2)</dd></div>
+          <div class="spec"><dt>Brilho interno</dt><dd>inset 0 1px 0 rgba(255,255,255,0.22)</dd></div>
+          <div class="spec"><dt>Sombra</dt><dd>0 14px 40px rgba(3,8,16,0.42)</dd></div>
+          <div class="spec"><dt>Raio</dt><dd>999px (pílula)</dd></div>
+          <div class="spec"><dt>Largura</dt><dd>1140px → 1040px ao encolher</dd></div>
+          <div class="spec"><dt>Transição</dt><dd>260ms cubic-bezier(0, 0, 0.2, 1)</dd></div>
+          <div class="spec"><dt>Logo</dt><dd>recorte branco, sem a linha "higienização"</dd></div>
+          <div class="spec"><dt>Altura da logo</dt><dd>30px · respiro de 20–24px à esquerda</dd></div>
+        </dl>
+
+        <p class="note" style="margin-top:18px">
+          A logo original mistura azul, preto e um sofá de traço com miolo branco. A versão branca
+          é gerada a partir do recorte: tudo que é tinta vira branco opaco e o miolo do sofá fica
+          transparente, então o desenho sobrevive como traço. A linha "higienização" sai — ela é
+          ilegível na altura de uma barra — e o rabo do "p" de Limp é preservado. Contraste no
+          vidro: 11:1.
+        </p>
+
+        <div class="swatches" style="margin-top:18px">
+          <span class="swatch"><span class="chip" style="background:#070f1c"></span>#070F1C</span>
+          <span class="swatch"><span class="chip" style="background:#0b1a2e"></span>#0B1A2E</span>
+          <span class="swatch"><span class="chip" style="background:#0877c9"></span>#0877C9</span>
+          <span class="swatch"><span class="chip" style="background:#4aa6e8"></span>#4AA6E8</span>
+          <span class="swatch"><span class="chip" style="background:#ffffff"></span>#FFFFFF</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+
+<script>
+  (function () {
+    var stage = document.getElementById("stage");
+    var bar = stage.querySelector(".bar");
+    function sync() {
+      bar.classList.toggle("is-stuck", stage.scrollTop > 12);
+    }
+    stage.addEventListener("scroll", sync, { passive: true });
+    sync();
+  })();
+</script>

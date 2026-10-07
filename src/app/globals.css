@@ -13,6 +13,8 @@
   --color-navy-card: var(--navy-card);
   --color-navy-foreground: var(--navy-foreground);
   --color-navy-muted: var(--navy-muted-foreground);
+  --color-navy-surface: var(--navy-surface);
+  --color-primary-soft: var(--primary-soft);
   --shadow-glow: 0 4px 20px rgb(0 113 191 / 0.35);
   --shadow-glow-lg: 0 24px 64px rgb(7 15 28 / 0.22);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -66,7 +68,9 @@
   --secondary-foreground: oklch(0.16 0.02 258);
   --muted: oklch(0.97 0.01 258);
   --muted-foreground: oklch(0.47 0.02 258);
-  --accent: oklch(0.95 0.07 92);
+  /* Soft blue tint, not the yellow the first draft carried: the logo is navy,
+     blue and white only. */
+  --accent: oklch(0.95 0.03 250);
   --accent-foreground: oklch(0.16 0.02 258);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.91 0.01 258);
@@ -87,7 +91,7 @@
   --sidebar-border: oklch(0.91 0.01 258);
   --sidebar-ring: #0877c9;
 
-  /* Multilimp palette: navy, blue and yellow taken from the supplied logo. */
+  /* Multilimp palette: the navy, blue and white of the supplied logo. */
   --navy: #070f1c;
   --navy-card: #0b1a2e;
   --navy-surface: #0f2340;
@@ -95,9 +99,27 @@
   --navy-foreground: #ffffff;
   --navy-muted-foreground: rgba(255, 255, 255, 0.7);
   --navy-muted-text: #8da2c0;
-  --accent-hover: #e6b62e;
-  --glass-bg: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  --primary-soft: #4aa6e8;
+
+  /* Liquid glass used by the floating header and by anything that sits on top
+     of a photo: a navy tint, a blur that also lifts saturation, a hairline
+     border and a 1px inner highlight that fakes the lit top edge. */
+  --glass-bg: rgba(7, 15, 28, 0.42);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(14px) saturate(1.5);
+  --glass-shadow:
+    0 14px 40px rgba(3, 8, 16, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+
+  /* Height reserved for the floating header above the first section. */
+  --header-h: 86px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 96px;
+  }
 }
 
 .dark {
@@ -288,6 +310,167 @@ button:hover > .btn-cta-label {
   }
   .reveal {
     opacity: 1;
+    transform: none;
+  }
+}
+
+/* The floating glass nav sits on top of the page, so the first section of each
+   route reserves its height. Unlayered on purpose: it has to beat the Tailwind
+   padding utilities those hero sections already carry. */
+main > section:first-of-type {
+  padding-top: calc(var(--header-h) + 2rem);
+}
+@media (min-width: 640px) {
+  main > section:first-of-type {
+    padding-top: calc(var(--header-h) + 2.5rem);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Media cards — one shared language for every card that is backed by a photo
+   (services, differentiators, locations, posts). Structure is always:
+   <a class="media-card"> <img class="media-card-image"> <span class="media-card-veil"> <div class="media-card-body">
+--------------------------------------------------------------------------- */
+
+.media-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--navy-card);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition:
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.media-card-image {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.media-card-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 15, 28, 0) 0%,
+    rgba(7, 15, 28, 0.08) 32%,
+    rgba(7, 15, 28, 0.55) 62%,
+    rgba(7, 15, 28, 0.9) 85%,
+    rgba(7, 15, 28, 0.98) 100%
+  );
+}
+/* Only the clickable tiles get the ring and the lift — a static card that
+   reacted like a link would promise navigation it does not have. */
+a.media-card:hover,
+a.media-card:focus-visible {
+  box-shadow: inset 0 0 0 2.5px var(--primary);
+  transform: translateY(-3px);
+}
+.media-card:hover .media-card-image,
+.media-card:focus-visible .media-card-image {
+  transform: scale(1.05);
+}
+.media-card:hover .media-card-title,
+.media-card:focus-visible .media-card-title {
+  color: var(--primary-soft);
+}
+.media-card-title {
+  transition: color 0.3s ease;
+}
+
+/* Grid-level focus: dim the siblings of the card being pointed at. */
+@media (hover: hover) and (min-width: 768px) {
+  .media-grid:hover .media-card:not(:hover) {
+    opacity: 0.62;
+  }
+  .media-card {
+    transition:
+      box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.35s ease;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Marquee — two rows of reviews sliding in opposite directions, with the ends
+   faded out by a mask so cards enter and leave instead of being cut off.
+--------------------------------------------------------------------------- */
+
+.marquee-row {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-run var(--marquee-duration, 70s) linear infinite;
+}
+.marquee-row[data-direction="reverse"] .marquee-track {
+  animation-direction: reverse;
+}
+.marquee-row:hover .marquee-track,
+.marquee-row:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-run {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scroll-linked reveals. Progressive enhancement only: where view timelines are
+   unsupported the markup stays exactly as rendered, fully visible.
+--------------------------------------------------------------------------- */
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 24%;
+    }
+  }
+}
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero copy animates once on load — the one piece of motion that runs without
+   the viewer doing anything. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rise {
+    animation: hero-rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--hero-delay, 0ms);
+  }
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  a.media-card:hover,
+  a.media-card:focus-visible {
     transform: none;
   }
 }

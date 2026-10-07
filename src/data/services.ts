@@ -11,7 +11,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Higienização de Sofás e Estofados em Americana",
     heroSubheadline:
       "Limpeza profunda que remove manchas, odores e ácaros do seu sofá sem sair de casa. Atendimento a domicílio em Americana, Santa Bárbara d’Oeste, Nova Odessa e região.",
-    heroImage: "/images/multilimp/sofa.webp",
+    heroImage: "/images/multilimp/servicos/sofas-e-estofados-2.webp",
     primaryKeyword: "higienização de sofá em Americana",
     intro:
       "O sofá é um dos móveis mais usados da casa e, por isso, um dos que mais acumula sujeira invisível: poeira, resíduos de pele, pelos de animais, restos de comida e umidade se acumulam nas fibras do tecido dia após dia. Mesmo com aspiração regular, essa sujeira profunda continua presente e, com o tempo, resulta em manchas fixadas, odores persistentes e desgaste do estofado.\n\nA higienização profissional da Multilimp Higienização vai além da limpeza superficial. Usamos produtos profissionais adequados a cada tipo de tecido (chenille, suede, veludo, linho, couro e sintéticos) para extrair a sujeira encravada nas fibras, eliminar manchas e neutralizar odores, sem descolorir ou danificar o material.\n\nO atendimento é feito a domicílio, em residências e empresas, com avaliação do estofado antes da aplicação de qualquer produto, o que garante uma limpeza segura e adequada para o seu sofá, poltrona ou cadeira estofada.",
@@ -156,7 +156,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Higienização de Colchões em Americana",
     heroSubheadline:
       "Limpeza profunda que elimina ácaros, fungos e odores do colchão, direto na sua casa, sem precisar retirar o colchão do quarto.",
-    heroImage: "/images/multilimp/colchao.webp",
+    heroImage: "/images/multilimp/servicos/colchoes-2.webp",
     primaryKeyword: "higienização de colchão em Americana",
     intro:
       "Passamos, em média, um terço do dia deitados sobre o colchão, o que faz dele um dos itens da casa com maior contato direto com a pele e as vias respiratórias. Ao longo do tempo, o colchão acumula suor, células de pele, poeira e umidade, um ambiente propício para a proliferação de ácaros e fungos, mesmo em colchões que parecem limpos por fora.\n\nA higienização profissional de colchões da Multilimp Higienização remove essa sujeira acumulada nas camadas internas do tecido, tratando manchas de umidade e neutralizando odores, sem molhar o colchão a ponto de comprometer o enchimento interno.\n\nO serviço é indicado tanto para uma limpeza periódica de manutenção quanto para situações específicas, como manchas recentes, colchões que ficaram tempo sem uso, ou preparação do quarto para bebês e pessoas com sensibilidade respiratória.",
@@ -300,7 +300,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Higienização de Bancos Automotivos em Americana",
     heroSubheadline:
       "Limpeza profunda de bancos de tecido e couro, carpete interno e teto do carro, com atendimento no local combinado com você.",
-    heroImage: "/images/multilimp/bancos-automotivos.webp",
+    heroImage: "/images/multilimp/servicos/bancos-automotivos-2.webp",
     primaryKeyword: "higienização de bancos de carro em Americana",
     intro:
       "O interior do carro é um ambiente fechado, exposto diariamente a suor, poeira, restos de comida, umidade e, em muitos casos, pelos de pets. Diferente da casa, o carro fica mais tempo fechado e com pouca ventilação, o que favorece o acúmulo de odores e sujeira nos bancos, no carpete e no forro do teto.\n\nA higienização automotiva da Multilimp Higienização trata os bancos (de tecido ou couro), o carpete interno e o teto do veículo, removendo sujeira encravada, manchas e odores acumulados no uso diário, seja do carro particular, do carro de aplicativo ou da frota da empresa.\n\nO atendimento é feito no local combinado com você, com avaliação do estado dos bancos e do interior do veículo antes da aplicação dos produtos, respeitando o tipo de material de cada banco.",
@@ -444,7 +444,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Higienização de Tapetes e Carpetes em Americana",
     heroSubheadline:
       "Lavagem profissional que remove a sujeira encravada nas fibras de tapetes, carpetes e capachos, com atendimento a domicílio.",
-    heroImage: "",
+    heroImage: "/images/multilimp/servicos/tapetes-e-carpetes-2.webp",
     primaryKeyword: "higienização de tapetes em Americana",
     intro:
       "Tapetes e carpetes ficam em contato direto com o chão, um dos pontos de maior circulação e sujeira da casa ou do ambiente comercial. Poeira, areia, resíduos de calçado e pelos de animais se acumulam nas fibras ao longo do tempo, e a aspiração comum remove apenas a sujeira superficial, deixando a sujeira mais profunda intacta.\n\nA higienização profissional da Multilimp Higienização atua diretamente nas fibras do tapete ou carpete, removendo sujeira encravada, tratando manchas e reduzindo a presença de ácaros, o que é especialmente importante em ambientes com crianças, pets ou pessoas com alergias respiratórias.\n\nO serviço é feito a domicílio, com avaliação do tipo de fibra do tapete ou carpete antes da aplicação dos produtos, respeitando as particularidades de cada material, seja um tapete de sala, carpete de quarto ou capacho de entrada.",
@@ -587,7 +587,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Impermeabilização de Estofados em Americana",
     heroSubheadline:
       "Proteção contra líquidos, manchas e desgaste do dia a dia para sofás, poltronas e bancos automotivos, aplicada no seu endereço.",
-    heroImage: "/images/multilimp/sofa-couro.webp",
+    heroImage: "/images/multilimp/servicos/impermeabilizacao-de-estofados.webp",
     primaryKeyword: "impermeabilização de estofados em Americana",
     intro:
       "Sem uma proteção adequada, qualquer estofado fica vulnerável a acidentes do dia a dia: um copo de suco derramado, um respingo de café ou o contato constante com roupas e pele podem gerar manchas difíceis de remover e acelerar o desgaste do tecido.\n\nA impermeabilização de estofados da Multilimp Higienização cria uma camada de proteção sobre o tecido, dificultando a penetração de líquidos e sujeira nas fibras. Isso não torna o estofado à prova de manchas permanentes, mas dá mais tempo para limpar o líquido antes que ele penetre e manche de forma definitiva, além de reduzir o desgaste causado pelo uso diário.\n\nO serviço é aplicado a domicílio em sofás, poltronas, cadeiras estofadas e bancos automotivos, com avaliação do tipo de tecido antes da aplicação, já que a técnica e o produto variam conforme o material.",
@@ -730,7 +730,7 @@ export const SERVICES: ServiceDefinition[] = [
     heroHeadline: "Higienização de Persianas em Americana e Região",
     heroSubheadline:
       "Consulte a equipe sobre o atendimento para sua persiana. A indicação depende do modelo, do material e das condições da peça.",
-    heroImage: "",
+    heroImage: "/images/multilimp/servicos/persianas.webp",
     primaryKeyword: "higienização de persianas em Americana",
     intro:
       "A Multilimp Higienização atende solicitações para higienização de persianas em Americana e região. Como os modelos e materiais variam, a equipe precisa conhecer a peça para orientar sobre a possibilidade de atendimento e os cuidados indicados.\n\nEnvie uma foto e descreva o modelo da persiana pelo WhatsApp. A equipe confirma se consegue atender aquele material, explica os próximos passos e consulta a disponibilidade de agenda.",

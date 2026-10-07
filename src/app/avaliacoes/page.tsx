@@ -71,9 +71,13 @@ export default async function AvaliacoesPage() {
           </div>
 
           {reviewData.reviews.length > 0 ? (
-            <div className="mt-8 grid auto-cols-[min(85vw,23rem)] grid-flow-col gap-5 overflow-x-auto px-0.5 pb-3 snap-x snap-mandatory lg:grid-flow-row lg:grid-cols-3 lg:overflow-visible">
+            <div className="mt-8 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5">
               {reviewData.reviews.map((review) => (
-                <ReviewCard key={review.id} review={review} />
+                <ReviewCard
+                  key={review.id}
+                  review={review}
+                  className="break-inside-avoid min-h-0"
+                />
               ))}
             </div>
           ) : (

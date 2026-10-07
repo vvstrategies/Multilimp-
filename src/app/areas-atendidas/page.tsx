@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, Plus } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/sections/areas/breadcrumbs";
@@ -60,28 +60,50 @@ export default function AreasAtendidasPage() {
           <h2 className="">
             Cidades atendidas
           </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Seven cities plus the "other city" tile make eight, so the grid
+              fills exactly at one, two and four columns. */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((location) => (
               <Link
                 key={location.slug}
                 href={`/areas-atendidas/${location.slug}`}
-                className="group flex flex-col gap-3 rounded-2xl bg-background p-6 ring-1 ring-border transition-colors hover:bg-muted/60"
+                className="group flex flex-col gap-2 rounded-2xl bg-background p-5 ring-1 ring-border transition-shadow hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2 text-base font-semibold">
                   <MapPin className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                  {location.region}
-                </div>
-                <p className="text-base font-semibold">{location.city}</p>
-                <p className="text-sm text-muted-foreground">{location.intro}</p>
-                <span className="mt-1 flex items-center gap-1 text-sm font-medium text-primary">
+                  {location.city}
+                </span>
+                <p className="text-sm text-muted-foreground">
+                  Atendimento a domicílio sob agendamento
+                </p>
+                <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-medium text-primary">
                   Ver detalhes
                   <ArrowRight
-                    className="size-3.5 transition-transform group-hover:translate-x-0.5"
+                    className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden="true"
                   />
                 </span>
               </Link>
             ))}
+            <Link
+              href="/contato"
+              className="group flex flex-col gap-2 rounded-2xl border border-dashed border-border p-5 transition-colors hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <span className="flex items-center gap-2 text-base font-semibold">
+                <Plus className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                Outra cidade
+              </span>
+              <p className="text-sm text-muted-foreground">
+                Consulte a cobertura do seu endereço
+              </p>
+              <span className="mt-auto flex items-center gap-1 pt-2 text-sm font-medium text-primary">
+                Falar com a equipe
+                <ArrowRight
+                  className="size-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </span>
+            </Link>
           </div>
         </Container>
       </section>

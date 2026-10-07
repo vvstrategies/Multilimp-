@@ -1,24 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  BedDouble,
-  CarFront,
   CheckCircle2,
   ChevronRight,
   Droplets,
-  ImageOff,
   ListChecks,
   MapPin,
-  Rows3,
   ShieldCheck,
-  Sofa,
-  Sparkles,
   Star,
 } from "lucide-react";
-import type { ComponentType } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { MediaCard } from "@/components/ui/media-card";
 import {
   Accordion,
   AccordionContent,
@@ -28,38 +22,6 @@ import {
 import { Container } from "@/components/layout/container";
 import { BUSINESS, whatsappHref } from "@/lib/constants";
 import type { ServiceDefinition } from "@/types/service";
-
-const SERVICE_ICONS: Record<string, ComponentType<{ className?: string }>> = {
-  "sofas-e-estofados": Sofa,
-  colchoes: BedDouble,
-  "bancos-automotivos": CarFront,
-  "tapetes-e-carpetes": Rows3,
-  "impermeabilizacao-de-estofados": ShieldCheck,
-};
-
-function getServiceIcon(slug: string) {
-  return SERVICE_ICONS[slug] ?? Sparkles;
-}
-
-function HeroImagePlaceholder({ icon: Icon }: { icon: ComponentType<{ className?: string }> }) {
-  return (
-    <div
-      className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-navy-card via-navy to-primary/20 ring-1 ring-white/10"
-      aria-hidden="true"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent" />
-      <div className="relative flex flex-col items-center gap-3 text-navy-muted">
-        <span className="flex size-16 items-center justify-center rounded-full bg-white/10 text-primary ring-1 ring-white/20 backdrop-blur-sm">
-          <Icon className="size-8" />
-        </span>
-        <span className="flex items-center gap-1.5 text-xs font-medium tracking-wide uppercase">
-          <ImageOff className="size-3.5" />
-          Foto em breve
-        </span>
-      </div>
-    </div>
-  );
-}
 
 function Breadcrumb({ shortName }: { shortName: string }) {
   return (
@@ -92,7 +54,6 @@ export function ServicePageTemplate({
   service: ServiceDefinition;
   allServices: ServiceDefinition[];
 }) {
-  const Icon = getServiceIcon(service.slug);
   const introParagraphs = service.intro.split("\n\n").filter(Boolean);
   const relatedServices = service.relatedServiceSlugs
     .map((slug) => allServices.find((s) => s.slug === slug))
@@ -144,20 +105,19 @@ export function ServicePageTemplate({
             </div>
           </div>
 
-          <div>
-            {service.heroImage ? (
-              <Image
-                src={service.heroImage}
-                alt={service.heroHeadline}
-                width={1200}
-                height={900}
-                preload
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="aspect-[4/3] w-full rounded-3xl object-cover ring-1 ring-white/10"
-              />
-            ) : (
-              <HeroImagePlaceholder icon={Icon} />
-            )}
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl ring-1 ring-white/10">
+            <Image
+              src={service.heroImage}
+              alt={service.heroHeadline}
+              fill
+              preload
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover"
+            />
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-navy/55 via-transparent to-transparent"
+            />
           </div>
         </Container>
       </section>
@@ -315,32 +275,18 @@ export function ServicePageTemplate({
       {relatedServices.length > 0 && (
         <section className="py-16 sm:py-20">
           <Container>
-            <h2 className="">
-              Serviços relacionados
-            </h2>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedServices.map((related) => {
-                const RelatedIcon = getServiceIcon(related.slug);
-                return (
-                  <Link key={related.slug} href={`/servicos/${related.slug}`} className="group">
-                    <Card className="h-full p-6 transition-shadow group-hover:shadow-lg">
-                      <span className="flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <RelatedIcon className="size-5" aria-hidden="true" />
-                      </span>
-                      <h3 className="mt-4 font-heading">
-                        {related.shortName}
-                      </h3>
-                      <p className="mt-1.5 text-sm text-muted-foreground">
-                        {related.heroSubheadline}
-                      </p>
-                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                        Saiba mais
-                        <ChevronRight className="size-4" aria-hidden="true" />
-                      </span>
-                    </Card>
-                  </Link>
-                );
-              })}
+            <h2 className="">Serviços relacionados</h2>
+            <div className="media-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedServices.map((related) => (
+                <MediaCard
+                  key={related.slug}
+                  href={`/servicos/${related.slug}`}
+                  image={related.heroImage}
+                  title={related.shortName}
+                  description={related.heroSubheadline}
+                  className="aspect-[4/3]"
+                />
+              ))}
             </div>
           </Container>
         </section>

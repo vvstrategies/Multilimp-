@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { cn } from "@/lib/utils";
 import type { GoogleReview } from "@/lib/google-reviews";
 
 export function GoogleLogo(props: React.SVGProps<SVGSVGElement>) {
@@ -24,7 +25,16 @@ function reviewDate(review: GoogleReview) {
   }).format(new Date(review.publishedAt));
 }
 
-export function ReviewCard({ review }: { review: GoogleReview }) {
+export function ReviewCard({
+  review,
+  className,
+  clamp = false,
+}: {
+  review: GoogleReview;
+  className?: string;
+  /** Marquee cards keep a fixed height, so long reviews are trimmed. */
+  clamp?: boolean;
+}) {
   const dateLabel = reviewDate(review);
   const authorContent = (
     <>
@@ -50,7 +60,12 @@ export function ReviewCard({ review }: { review: GoogleReview }) {
   );
 
   return (
-    <article className="flex h-full min-h-64 snap-start flex-col rounded-2xl bg-card p-5 ring-1 ring-border">
+    <article
+      className={cn(
+        "flex h-full min-h-64 snap-start flex-col rounded-2xl bg-card p-5 ring-1 ring-border",
+        className
+      )}
+    >
       <div className="flex items-start justify-between gap-3">
         {review.authorUri ? (
           <a
@@ -77,7 +92,12 @@ export function ReviewCard({ review }: { review: GoogleReview }) {
         ))}
       </div>
 
-      <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+      <p
+        className={cn(
+          "mt-4 flex-1 text-sm leading-relaxed text-muted-foreground",
+          clamp && "line-clamp-5"
+        )}
+      >
         {review.text || "Avaliação publicada no Google sem comentário em texto."}
       </p>
 

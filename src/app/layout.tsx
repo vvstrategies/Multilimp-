@@ -36,10 +36,9 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
-        {/* Every page's first section is a navy hero; this spacer matches that
-            color so the floating glass nav visually sits on top of one
-            continuous surface instead of exposing a blank strip above it. */}
-        <div aria-hidden="true" className="h-[74px] bg-navy sm:h-[82px] lg:h-[92px]" />
+        {/* The glass nav floats over the page. Every route opens with a navy
+            hero that reserves its height through `--header-h` in globals.css,
+            so no spacer is needed here. */}
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloatButton />

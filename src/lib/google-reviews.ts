@@ -1,5 +1,6 @@
 import "server-only";
 import { BUSINESS } from "@/lib/constants";
+import { CURATED_GOOGLE_REVIEWS } from "@/data/reviews";
 
 const GOOGLE_REVIEWS_REVALIDATE_SECONDS = 60 * 60 * 6;
 
@@ -55,6 +56,14 @@ export type GoogleReviewsData = {
   reviews: GoogleReview[];
 };
 
+function normalizeAuthor(name: string) {
+  return name
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .trim();
+}
+
 function fallbackReviews(): GoogleReviewsData {
   return {
     source: "fallback",
@@ -63,7 +72,7 @@ function fallbackReviews(): GoogleReviewsData {
     rating: BUSINESS.rating.value,
     totalReviews: BUSINESS.rating.count,
     googleMapsUri: BUSINESS.googleReviewsUrl,
-    reviews: [],
+    reviews: CURATED_GOOGLE_REVIEWS,
   };
 }
 
@@ -114,6 +123,13 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData> {
       };
     });
 
+    // The Places API only ever returns five reviews, which is not enough to
+    // fill the marquee. Top it up with the curated ones it did not include.
+    const liveAuthors = new Set(reviews.map((review) => normalizeAuthor(review.authorName)));
+    const topUp = CURATED_GOOGLE_REVIEWS.filter(
+      (review) => !liveAuthors.has(normalizeAuthor(review.authorName))
+    );
+
     return {
       source: "places",
       placeId: place.id ?? placeId,
@@ -121,7 +137,7 @@ export async function getGoogleReviews(): Promise<GoogleReviewsData> {
       rating: place.rating ?? BUSINESS.rating.value,
       totalReviews: place.userRatingCount ?? BUSINESS.rating.count,
       googleMapsUri: place.googleMapsUri ?? BUSINESS.googleReviewsUrl,
-      reviews,
+      reviews: [...reviews, ...topUp],
     };
   } catch (error) {
     console.error("Unable to load Multilimp reviews from Google Places.", error);

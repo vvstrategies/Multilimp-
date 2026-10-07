@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
@@ -47,7 +48,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       />
 
       <section className="bg-navy text-navy-foreground">
-        <Container className="py-16 sm:py-20">
+        <Container className="py-16 pb-36 sm:py-20 sm:pb-40">
           <nav aria-label="Breadcrumb" className="text-sm text-navy-muted">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
@@ -85,7 +86,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       <article className="py-16 sm:py-20">
         <Container className="max-w-3xl">
-          <p className="text-base text-muted-foreground">{post.excerpt}</p>
+          <div className="relative -mt-28 aspect-[16/9] overflow-hidden rounded-3xl ring-1 ring-border sm:-mt-32">
+            <Image
+              src={post.coverImage}
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          </div>
+
+          <p className="mt-10 text-base text-muted-foreground">{post.excerpt}</p>
 
           <div className="mt-8 space-y-10">
             {post.body.map((section, index) => (

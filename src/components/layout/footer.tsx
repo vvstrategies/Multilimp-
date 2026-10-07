@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
+import { FacebookIcon, InstagramIcon } from "@/components/icons";
 import {
   AREAS_NAV,
   BUSINESS,
@@ -12,19 +13,20 @@ import {
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-navy-foreground">
+    // The mobile contact dock is fixed over the page, so the footer keeps its
+    // own bottom padding clear of it.
+    <footer className="bg-navy pb-20 text-navy-foreground lg:pb-0">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="inline-flex items-center gap-3" aria-label={BUSINESS.displayName}>
+          <Link href="/" className="inline-flex items-center" aria-label={BUSINESS.displayName}>
             <Image
-              src="/images/multilimp/logo-multilimp.webp"
-              alt=""
-              width={579}
-              height={465}
-              sizes="92px"
-              className="h-auto w-[92px] rounded-xl bg-white p-2 object-contain"
+              src="/images/multilimp/logo-multilimp-branca-compacta.png"
+              alt={BUSINESS.displayName}
+              width={545}
+              height={406}
+              sizes="80px"
+              className="h-14 w-auto"
             />
-            <span className="text-sm font-semibold text-white">{BUSINESS.displayName}</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-navy-muted">
             Higienização e impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes,
@@ -41,26 +43,16 @@ export function Footer() {
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm text-navy-muted hover:text-navy-foreground"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="size-4 shrink-0"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-            </svg>
+            <InstagramIcon className="size-4 shrink-0" />
             @multlimp.higienizacao_
           </a>
           <a
             href={BUSINESS.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex items-center text-sm text-navy-muted hover:text-navy-foreground"
+            className="mt-3 inline-flex items-center gap-2 text-sm text-navy-muted hover:text-navy-foreground"
           >
+            <FacebookIcon className="size-4 shrink-0" />
             Facebook
           </a>
           <a

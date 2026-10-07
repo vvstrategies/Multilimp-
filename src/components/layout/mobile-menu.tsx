@@ -15,9 +15,9 @@ export function MobileMenu({ children }: { children: ReactNode }) {
     <details
       ref={detailsRef}
       onClick={closeAfterLinkClick}
-      className="group relative lg:hidden"
+      className="group relative ml-auto lg:hidden"
     >
-      <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 [&::-webkit-details-marker]:hidden">
+      <summary className="flex size-10 cursor-pointer list-none items-center justify-center rounded-full border border-white/15 bg-white/8 text-white transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 [&::-webkit-details-marker]:hidden">
         <span className="sr-only">Abrir menu</span>
         <svg
           viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ export function MobileMenu({ children }: { children: ReactNode }) {
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </summary>
-      <div className="absolute top-full right-0 mt-3 flex max-h-[calc(100vh-6rem)] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-y-auto rounded-2xl bg-navy/98 p-4 text-navy-foreground shadow-2xl ring-1 ring-white/15 backdrop-blur-xl">
+      <div className="absolute top-full right-0 mt-3 flex max-h-[calc(100vh-6rem)] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-y-auto rounded-2xl border border-[var(--glass-border)] bg-[rgba(7,15,28,0.9)] p-4 text-navy-foreground shadow-2xl shadow-[var(--glass-shadow)] backdrop-blur-xl">
         {children}
       </div>
     </details>

@@ -1,5 +1,4 @@
 import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
-import { Breadcrumb } from "@/components/sections/home/breadcrumb";
 import { AboutHero } from "@/components/sections/home/about-hero";
 import { AboutStory } from "@/components/sections/home/about-story";
 import { Differentiators } from "@/components/sections/home/differentiators";
@@ -23,7 +22,6 @@ export default function SobrePage() {
         ])}
       />
 
-      <Breadcrumb items={[{ name: "Início", path: "/" }, { name: "Sobre", path: "/sobre" }]} />
       <AboutHero />
       <AboutStory />
       <Differentiators />

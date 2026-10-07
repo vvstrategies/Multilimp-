@@ -4,6 +4,7 @@ export type BlogPost = {
   metaTitle: string;
   metaDescription: string;
   excerpt: string;
+  coverImage: string;
   publishedAt: string;
   readingTime: string;
   body: { heading?: string; paragraphs: string[] }[];
@@ -19,6 +20,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Entenda por que o colchão acumula ácaros, quais sinais indicam a hora de agir e como a higienização profissional ajuda a reduzir alergias em casa.",
     excerpt:
       "O colchão é um dos maiores acumuladores de ácaros da casa. Veja por que isso acontece, como identificar o problema e o que fazer para dormir em um ambiente mais limpo.",
+    coverImage: "/images/multilimp/blog/como-eliminar-acaros-do-colchao.webp",
     publishedAt: "2026-07-20",
     readingTime: "6 min de leitura",
     body: [
@@ -65,6 +67,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Odor persistente, manchas antigas e alergias podem indicar que o sofá precisa de uma limpeza profunda. Veja os principais sinais de alerta.",
     excerpt:
       "Nem sempre a sujeira do sofá é visível a olho nu. Conheça os sinais mais comuns de que chegou a hora de higienizar profissionalmente o estofado.",
+    coverImage: "/images/multilimp/blog/sinais-sofa-precisa-higienizacao-profissional.webp",
     publishedAt: "2026-08-01",
     readingTime: "5 min de leitura",
     body: [
@@ -117,6 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Entenda como funciona a impermeabilização de bancos automotivos, quando ela faz sentido e como combiná-la com a higienização do veículo.",
     excerpt:
       "Bancos de tecido sujam e mancham com facilidade. Entenda o que é a impermeabilização automotiva, como funciona e quando vale a pena investir nela.",
+    coverImage: "/images/multilimp/blog/vale-a-pena-impermeabilizar-estofado-do-carro.webp",
     publishedAt: "2026-08-10",
     readingTime: "5 min de leitura",
     body: [
