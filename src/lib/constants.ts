@@ -1,6 +1,6 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://palegoldenrod-peafowl-249350.hostingersite.com";
+  "https://multilimpsp.com.br";
 export const SITE_NAME = "Multilimp Higienização";
 
 // Keep business identity and contact details in one place for consistent

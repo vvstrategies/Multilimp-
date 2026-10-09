@@ -2,10 +2,10 @@
 
 Site institucional da Multilimp Higienização, empresa localizada em Americana e especializada em higienização e impermeabilização de estofados.
 
-- Site atualmente configurado: https://palegoldenrod-peafowl-249350.hostingersite.com
+- Site oficial: https://multilimpsp.com.br
 - Repositorio: https://github.com/vvstrategies/Multilimp-
 
-O domínio acima foi mantido porque não foi informado um novo domínio para a marca. Antes de trocar o domínio público, atualize `SITE_URL` em `src/lib/constants.ts` e o campo `homepage` deste arquivo e de `package.json`.
+O domínio oficial está centralizado em `SITE_URL`, com suporte ao override `NEXT_PUBLIC_SITE_URL` durante o build.
 
 ## Stack
 
