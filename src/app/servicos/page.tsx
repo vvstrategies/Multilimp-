@@ -11,7 +11,7 @@ import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Serviços de Higienização em Americana e Região",
   description:
-    "Higienização e impermeabilização de sofás, colchões, bancos automotivos, tapetes, carpetes e persianas em Americana e nas cidades da região.",
+    "Higienização e impermeabilização de sofás, colchões, bancos automotivos, tapetes, carpetes em Americana e nas cidades da região.",
   path: "/servicos",
 });
 
@@ -76,7 +76,7 @@ export default function ServicosPage() {
             </h1>
             <p className="mt-5 text-base text-navy-muted">
               A Multilimp Higienização atende residências e empresas com higienização e
-              impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes, poltronas e
+              impermeabilização de sofás, tapetes, cadeiras, carpetes, poltronas e
               bancos automotivos. Consulte a disponibilidade para Americana e as demais cidades
               atendidas.
             </p>

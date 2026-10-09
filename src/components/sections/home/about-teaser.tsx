@@ -25,7 +25,7 @@ export function AboutTeaser() {
             <h2 className="">Sobre a {BUSINESS.displayName}</h2>
             <p className="mt-4 text-base text-muted-foreground">
               Localizada em Americana, a Multilimp atende toda a região com serviços para
-              estofados, tapetes, persianas e outros itens. Conheça nosso trabalho.
+              estofados, tapetes e outros itens. Conheça nosso trabalho.
             </p>
 
             <div className="mt-8 flex flex-col gap-3">

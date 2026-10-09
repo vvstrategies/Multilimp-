@@ -18,7 +18,7 @@ export function ServicesGrid() {
             </p>
             <h2 className="mt-3">Cada peça pede uma técnica diferente</h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Higienização especializada para estofados, colchões, tapetes, persianas e bancos
+              Higienização especializada para estofados, colchões, tapetes e bancos
               automotivos, em residências e empresas.
             </p>
           </div>

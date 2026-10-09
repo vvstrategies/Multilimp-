@@ -36,7 +36,7 @@ export default function AreasAtendidasPage() {
             Cidades atendidas pela Multilimp Higienização
           </h1>
           <p className="mt-5 max-w-2xl text-base text-navy-muted">
-            Higienização e impermeabilização de estofados, tapetes, persianas, carpetes e
+            Higienização e impermeabilização de estofados, tapetes, carpetes e
             bancos automotivos, com atendimento em Americana e nas cidades da região.
           </p>
         </Container>

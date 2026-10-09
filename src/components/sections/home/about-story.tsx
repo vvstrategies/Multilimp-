@@ -23,7 +23,7 @@ export function AboutStory() {
               <p>
                 O atendimento começa pela avaliação do tipo de peça e do material. A Multilimp
                 oferece higienização e impermeabilização de estofados, além de serviços para
-                tapetes, persianas e carpetes.
+                tapetes e carpetes.
               </p>
               <p>
                 Atendemos tanto residências quanto empresas, e também oferecemos impermeabilização

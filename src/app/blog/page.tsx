@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Blog | Dicas de Higienização de Estofados",
   description:
-    "Dicas práticas da Multilimp Higienização sobre cuidados com sofás, colchões, tapetes, persianas e outros estofados.",
+    "Dicas práticas da Multilimp Higienização sobre cuidados com sofás, colchões, tapetes e outros estofados.",
   path: "/blog",
 });
 

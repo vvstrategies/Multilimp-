@@ -29,7 +29,7 @@ export function Footer() {
             />
           </Link>
           <p className="mt-4 max-w-sm text-sm text-navy-muted">
-            Higienização e impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes,
+            Higienização e impermeabilização de sofás, tapetes, cadeiras, carpetes,
             poltronas e bancos automotivos em Americana e cidades da região.
           </p>
           <div className="mt-4 flex items-center gap-1.5 text-sm text-navy-muted">

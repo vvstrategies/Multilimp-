@@ -3,16 +3,12 @@ import { SERVICES } from "@/data/services";
 import { SERVICES_NAV } from "@/lib/constants";
 
 // Sofás is the flagship service — it is what most Google reviews mention — so
-// it takes a 2x2 tile. The remaining five fill the grid exactly at every
-// breakpoint: Persianas goes full width on two columns and back to a single
-// tile on three, which is what keeps it from being left alone on a row.
+// it takes a 2x2 tile. The remaining services fill the responsive grid.
 const FEATURED_HREF = "/servicos/sofas-e-estofados";
 
 const SPANS: Record<string, string> = {
   "/servicos/sofas-e-estofados":
     "aspect-[4/3] sm:col-span-2 sm:aspect-[2/1] lg:col-span-2 lg:row-span-2 lg:aspect-auto",
-  "/servicos/persianas":
-    "aspect-[4/3] sm:col-span-2 sm:aspect-[2/1] lg:col-span-1 lg:aspect-square",
 };
 
 const DEFAULT_SPAN = "aspect-[4/3] sm:aspect-square";
@@ -31,7 +27,6 @@ const SERVICE_IMAGES: Record<string, string> = {
   "/servicos/tapetes-e-carpetes": "/images/multilimp/servicos/tapetes-e-carpetes-2.webp",
   "/servicos/impermeabilizacao-de-estofados":
     "/images/multilimp/servicos/impermeabilizacao-de-estofados.webp",
-  "/servicos/persianas": "/images/multilimp/servicos/persianas.webp",
 };
 
 export function ServicesBento({

@@ -15,7 +15,7 @@ import { SectionDivider } from "@/components/layout/section-divider";
 export const metadata = pageMetadata({
   title: "Multilimp Higienização | Americana e região",
   description:
-    "Higienização e impermeabilização de estofados, tapetes, persianas e carpetes em Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.",
+    "Higienização e impermeabilização de estofados, tapetes e carpetes em Americana, Santa Bárbara d’Oeste, Nova Odessa, Sumaré, Hortolândia, Limeira e Paulínia.",
   path: "/",
 });
 

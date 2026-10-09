@@ -18,7 +18,7 @@ export const GENERAL_FAQS: FaqItem[] = [
     category: "Sobre o serviço",
     question: "Quais tipos de estofado a Multilimp Higienização atende?",
     answer:
-      "A Multilimp trabalha com higienização e impermeabilização de sofás, tapetes, persianas, cadeiras estofadas, carpetes, poltronas e bancos automotivos. Consulte a equipe sobre o seu item.",
+      "A Multilimp trabalha com higienização e impermeabilização de sofás, tapetes, cadeiras estofadas, carpetes, poltronas e bancos automotivos. Consulte a equipe sobre o seu item.",
   },
   {
     category: "Sobre o serviço",

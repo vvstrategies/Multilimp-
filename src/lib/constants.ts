@@ -86,11 +86,6 @@ export const SERVICES_NAV: { label: string; href: string; description: string }[
     href: "/servicos/impermeabilizacao-de-estofados",
     description: "Proteção contra líquidos, manchas e desgaste do dia a dia",
   },
-  {
-    label: "Persianas",
-    href: "/servicos/persianas",
-    description: "Higienização cuidadosa de persianas sob avaliação",
-  },
 ];
 
 export const AREAS_NAV: { label: string; href: string }[] = [

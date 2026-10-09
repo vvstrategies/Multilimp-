@@ -60,7 +60,7 @@ export function localBusinessJsonLd(areasServed: string[] = []) {
     name: BUSINESS.legalName,
     alternateName: BUSINESS.displayName,
     description:
-      "Higienização e impermeabilização de sofás, tapetes, persianas, cadeiras, carpetes, poltronas e bancos automotivos, com atendimento na região de Americana.",
+      "Higienização e impermeabilização de sofás, tapetes, cadeiras, carpetes, poltronas e bancos automotivos, com atendimento na região de Americana.",
     url: SITE_URL,
     telephone: BUSINESS.phoneE164,
     email: BUSINESS.email,

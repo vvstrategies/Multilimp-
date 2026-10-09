@@ -62,7 +62,7 @@ export function Hero() {
             className="hero-rise mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg"
             style={{ "--hero-delay": "160ms" } as React.CSSProperties}
           >
-            Higienização e impermeabilização de sofás, colchões, tapetes, persianas, carpetes e
+            Higienização e impermeabilização de sofás, colchões, tapetes, carpetes e
             bancos automotivos em Americana e região. Mais de três anos cuidando de cada peça.
           </p>
 
