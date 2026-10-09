@@ -11,7 +11,7 @@ import { JsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Serviços de Higienização em Americana e Região",
   description:
-    "Higienização e impermeabilização de sofás, colchões, bancos automotivos, tapetes, carpetes em Americana e nas cidades da região.",
+    "Higienização e impermeabilização de sofás, colchões, bancos automotivos, tapetes e carpetes em Americana e nas cidades da região.",
   path: "/servicos",
 });
 
