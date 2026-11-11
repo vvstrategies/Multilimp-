@@ -2,6 +2,19 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  async headers() {
+    return [
+      {
+        source: "/llms.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=UTF-8",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     // Next 16 requires an explicit allowlist for generated image quality.
     qualities: [75],
